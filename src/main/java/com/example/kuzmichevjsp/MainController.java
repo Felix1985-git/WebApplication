@@ -1,4 +1,4 @@
-package com.example.kuzmichevjsp.controller;
+package com.example.kuzmichevjsp;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +10,7 @@ public class MainController {
     @RequestMapping(value = {"/"}, method = RequestMethod.GET)
     public String index(Model model) {
         model.addAttribute("message");
-        return "welcome";
+        return "startPages";
     }
     @RequestMapping(value = {"/hello"}, method = RequestMethod.GET)
     public String indexNew(Model model) {

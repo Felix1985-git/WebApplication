@@ -2,10 +2,10 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Welcome</title>
+    <title>Start</title>
 </head>
 <body>
-<h1>Welcome</h1>
+<h1>StartPages</h1>
 
 </body>
 
