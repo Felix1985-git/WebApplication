@@ -38,6 +38,26 @@ public class Plane {
         return taleNumber;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setCapacity(Integer capacity) {
+        this.capacity = capacity;
+    }
+
+    public void setTaleNumber(String taleNumber) {
+        this.taleNumber = taleNumber;
+    }
+
     @Override
     public String toString() {
         return "Planes{" +

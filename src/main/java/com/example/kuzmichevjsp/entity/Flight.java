@@ -48,12 +48,36 @@ public class Flight {
         return number;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setPlanesId(Integer planesId) {
+        this.planesId = planesId;
+    }
+
+    public void setPilotsId(Integer pilotsId) {
+        this.pilotsId = pilotsId;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public void setTime(Time time) {
+        this.time = time;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
     @Override
     public String toString() {
         return "Flights{" +
                 "id=" + id +
-                ", first_name='" + planesId + '\'' +
-                ", last_name='" + pilotsId + '\'' +
+                ", planesId='" + planesId + '\'' +
+                ", pilotsId='" + pilotsId + '\'' +
                 ", date='" + date + '\'' +
                 ", time='" + time + '\'' +
                 ", number='" + number + '\'' +
