@@ -26,4 +26,9 @@ public class FlightServiceImp implements FlightService {
     public List<Flight> getAllFlightJDBC() {
         return flightDao.getAllFlightJDBC();
     }
+
+    @Override
+    public void insertFlightJDBC() {
+        flightDao.insertFlightJDBC();
+    }
 }

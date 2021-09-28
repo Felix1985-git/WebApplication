@@ -1,5 +1,6 @@
 package com.example.kuzmichevjsp.entity;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
 

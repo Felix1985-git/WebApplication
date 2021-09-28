@@ -1,16 +1,11 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <!DOCTYPE HTML>
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Flights list</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css"/>
+    <title>FlightsById</title>
 </head>
 <body>
-<h1>Flights list</h1>
-
-<br/><br/>
+<h1>Result search by id flights</h1>
 <div>
     <table border="1">
         <tr>
@@ -19,21 +14,15 @@
             <th>time</th>
             <th>number</th>
         </tr>
-        <c:forEach  items="${flights}" var ="flights">
             <tr>
                 <td>${flights.id}</td>
                 <td>${flights.date}</td>
                 <td>${flights.time}</td>
                 <td>${flights.number}</td>
             </tr>
-        </c:forEach>
     </table>
-    <td>
-        <h3><a href="/addFlight">Create New Flight</a></h3>
-    </td>
 
 </div>
-
 
 </body>
 

@@ -7,4 +7,5 @@ import java.util.List;
 public interface FlightDao {
     Flight getFlightByIdJDBC(int id);
     List<Flight> getAllFlightJDBC();
+    void insertFlightJDBC();
 }

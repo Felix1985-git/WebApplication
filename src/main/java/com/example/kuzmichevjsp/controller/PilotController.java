@@ -17,8 +17,9 @@ public class PilotController {
     }
 
     @GetMapping(value = "/getPilotByIdJDBC")
-    public void getPilotByIdJDBC (@RequestParam("id") int id) {
-        System.out.println(pilotService.getPilotByIdJDBC(id));
+    public String getPilotByIdJDBC (@RequestParam("id") int id, Model model) {
+        model.addAttribute("pilots", pilotService.getPilotByIdJDBC(id));
+        return "pilotsByID";
     }
 
     @GetMapping(value =  "/pilotsList")

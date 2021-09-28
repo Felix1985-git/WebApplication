@@ -18,8 +18,9 @@ public class PlaneController {
     }
 
     @GetMapping(value = "/getPlaneByIdJDBC")
-    public void getPlaneByIdJDBC (@RequestParam("id") int id) {
-        System.out.println(planeService.getPlaneByIdJDBC(id));
+    public String getPlaneByIdJDBC (@RequestParam("id") int id, Model model) {
+        model.addAttribute("planes", planeService.getPlaneByIdJDBC(id));
+        return "planesByID";
     }
 
     @GetMapping(value =  "/planesList")

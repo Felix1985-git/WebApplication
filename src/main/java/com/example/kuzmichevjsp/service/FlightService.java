@@ -8,4 +8,5 @@ public interface FlightService {
 
     Flight getFlightByIdJDBC(int id);
     List<Flight> getAllFlightJDBC();
+    void insertFlightJDBC();
 }

@@ -16,6 +16,7 @@ public class FlightImp implements FlightDao {
 
     private final String GET_FLIGHT_BY_ID_JDBC = "select * from flights where id = ?";
     private final String GET_ALL_FLIGHT_JDBC = "select * from flights";
+    private final String INSERT_FLIGHT_JDBC = "INSERT INTO flights (PLANES_ID , PILOTS_ID , DATE , TIME, NUMBER) VALUES(?, ?, '?', '?', ?)";
 
     @Autowired
     public FlightImp(JdbcTemplate jdbcTemplate) {
@@ -30,6 +31,11 @@ public class FlightImp implements FlightDao {
     @Override
     public List<Flight> getAllFlightJDBC() {
         return jdbcTemplate.query(GET_ALL_FLIGHT_JDBC, new FlightRowMapper());
+    }
+
+    @Override
+    public void insertFlightJDBC() {
+        jdbcTemplate.update(INSERT_FLIGHT_JDBC);
     }
 
 }

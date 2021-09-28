@@ -5,8 +5,10 @@ import com.example.kuzmichevjsp.service.FlightService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
+
 
 @Controller
 public class FlightController {
@@ -19,8 +21,9 @@ public class FlightController {
     }
 
     @GetMapping(value = "/getFlightByIdJDBC")
-    public Flight getFlightByIdJDBC (@RequestParam("id") int id) {
-        return flightService.getFlightByIdJDBC(id);
+    public String getFlightByIdJDBC (@RequestParam("id") int id, Model model) {
+        model.addAttribute("flights", flightService.getFlightByIdJDBC(id));
+        return "flightsByID";
     }
 
     @GetMapping(value =  "/flightsList")
@@ -28,4 +31,20 @@ public class FlightController {
         model.addAttribute("flights", flightService.getAllFlightJDBC());
         return "flightsList";
     }
+    @RequestMapping("/addFlight")
+    public String newCustomerForm(Map<String, Object> model) {
+        Flight flight = new Flight();
+        model.put("flight", flight);
+        return "addFlight";
+    }
+
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    public String saveCustomer(@ModelAttribute("flight") Flight flight) {
+        flightService.insertFlightJDBC();
+        return "redirect:/";
+    }
+
+
+
+
 }
