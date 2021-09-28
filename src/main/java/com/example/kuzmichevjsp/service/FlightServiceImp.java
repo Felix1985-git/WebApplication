@@ -31,12 +31,6 @@ public class FlightServiceImp implements FlightService {
     @Override
     @Transient
     public void insertFlightJDBC(FlightDto flight) {
-        FlightDto flightDto = new FlightDto();
-        flightDto.setPlanesId(flight.getPlanesId());
-        flightDto.setPilotsId(flight.getPilotsId());
-        flightDto.setDate(flight.getDate());
-        flightDto.setTime(flight.getTime());
-        flightDto.setNumber(flight.getNumber());
-        flightDao.insertFlightJDBC(flightDto);
+        flightDao.insertFlightJDBC(flight);
     }
 }
