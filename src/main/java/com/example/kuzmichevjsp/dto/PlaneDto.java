@@ -1,16 +1,16 @@
-package com.example.kuzmichevjsp.entity;
+package com.example.kuzmichevjsp.dto;
 
-public class Plane {
+public class PlaneDto {
     private int id;
     private String brand;
     private String model;
     private Integer capacity;
     private String taleNumber;
 
-    public Plane() {
+    public PlaneDto() {
     }
 
-    public Plane(int id, String brand, String model, int capacity, String taleNumber) {
+    public PlaneDto(int id, String brand, String model, int capacity, String taleNumber) {
         this.id = id;
         this.brand = brand;
         this.model = model;

@@ -11,11 +11,12 @@
 </head>
 <body>
 <div align="center">
-    <h2>New Customer</h2>
+    <h2>Add flight</h2>
 
 
-    <%--@elvariable id="flight" type=""--%>
-    <form:form action="save" method="post" modelAttribute="flight">
+
+    <%--@elvariable id="flight" type="java"--%>
+    <form:form action="saveNewFlight" method="post" modelAttribute="flight">
         <table border="0" cellpadding="5">
             <tr>
                 <td>planesId</td>

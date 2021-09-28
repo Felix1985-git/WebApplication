@@ -1,7 +1,6 @@
 package com.example.kuzmichevjsp.dao;
 
-import com.example.kuzmichevjsp.entity.Pilot;
-import com.example.kuzmichevjsp.rowMapper.FlightRowMapper;
+import com.example.kuzmichevjsp.dto.PilotDto;
 import com.example.kuzmichevjsp.rowMapper.PilotRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -22,12 +21,12 @@ public class PilotImp implements PilotDao {
     }
 
     @Override
-    public Pilot getPilotByIdJDBC(int id) {
+    public PilotDto getPilotByIdJDBC(int id) {
         return jdbcTemplate.queryForObject(GET_PILOT_BY_ID_JDBC,new PilotRowMapper(), id);
     }
 
     @Override
-    public List<Pilot> getAllPilotJDBC() {
+    public List<PilotDto> getAllPilotJDBC() {
         return jdbcTemplate.query(GET_ALL_PILOT_JDBC, new PilotRowMapper());
     }
 }

@@ -1,16 +1,16 @@
-package com.example.kuzmichevjsp.entity;
+package com.example.kuzmichevjsp.dto;
 
-public class Pilot {
+public class PilotDto {
     private int id;
     private String firstName;
     private String lastName;
-    private Rang rang;
+    private RangDto rang;
     private String code;
 
-    public Pilot() {
+    public PilotDto() {
     }
 
-    public Pilot(int id, String firstName, String lastName, Rang rang, String code) {
+    public PilotDto(int id, String firstName, String lastName, RangDto rang, String code) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -30,7 +30,7 @@ public class Pilot {
         return lastName;
     }
 
-    public Rang getRang() {
+    public RangDto getRang() {
         return rang;
     }
 
@@ -50,7 +50,7 @@ public class Pilot {
         this.lastName = lastName;
     }
 
-    public void setRang(String string, Rang rang) {
+    public void setRang(String string, RangDto rang) {
         this.rang = rang;
     }
 

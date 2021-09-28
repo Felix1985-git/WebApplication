@@ -20,13 +20,13 @@
             <th>capacity</th>
             <th>tale number</th>
         </tr>
-        <c:forEach  items="${planes}" var ="planes">
+        <c:forEach  items="${plane}" var ="plane">
             <tr>
-                <td>${planes.id}</td>
-                <td>${planes.brand}</td>
-                <td>${planes.model}</td>
-                <td>${planes.capacity}</td>
-                <td>${planes.taleNumber}</td>
+                <td>${plane.id}</td>
+                <td>${plane.brand}</td>
+                <td>${plane.model}</td>
+                <td>${plane.capacity}</td>
+                <td>${plane.taleNumber}</td>
             </tr>
         </c:forEach>
     </table>

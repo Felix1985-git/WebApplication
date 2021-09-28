@@ -16,11 +16,11 @@
             <th>code</th>
         </tr>
             <tr>
-                <td>${pilots.id}</td>
-                <td>${pilots.firstName}</td>
-                <td>${pilots.lastName}</td>
-                <td>${pilots.rang}</td>
-                <td>${pilots.code}</td>
+                <td>${pilot.id}</td>
+                <td>${pilot.firstName}</td>
+                <td>${pilot.lastName}</td>
+                <td>${pilot.rang}</td>
+                <td>${pilot.code}</td>
             </tr>
     </table>
 </div>

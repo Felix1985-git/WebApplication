@@ -1,7 +1,6 @@
 package com.example.kuzmichevjsp.dao;
 
-import com.example.kuzmichevjsp.entity.Plane;
-import com.example.kuzmichevjsp.rowMapper.FlightRowMapper;
+import com.example.kuzmichevjsp.dto.PlaneDto;
 import com.example.kuzmichevjsp.rowMapper.PlaneRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -23,12 +22,12 @@ public class PlaneImp implements PlaneDao {
     }
 
     @Override
-    public Plane getPlaneByIdJDBC(int id) {
+    public PlaneDto getPlaneByIdJDBC(int id) {
         return jdbcTemplate.queryForObject(GET_PLANE_BY_ID_JDBC, new PlaneRowMapper(), id);
     }
 
     @Override
-    public List<Plane> getAllPlaneJDBC() {
+    public List<PlaneDto> getAllPlaneJDBC() {
         return jdbcTemplate.query(GET_ALL_PLANE_JDBC, new PlaneRowMapper());
     }
 }

@@ -1,10 +1,10 @@
-package com.example.kuzmichevjsp.entity;
+package com.example.kuzmichevjsp.dto;
 
 import java.sql.Date;
 import java.sql.Time;
 
 
-public class FullData {
+public class FullDataDto {
     private String flightNumber;
     private Date flightDate;
     private Time flightTime;
@@ -14,7 +14,7 @@ public class FullData {
     private String pilotFullName;
     private String pilotCodeRang;
 
-    public FullData(String flightNumber, Date flightDate, Time flightTime, String planeTaleNumber, String planeBrandModel, Integer planeCapacity, String pilotFullName, String pilotCodeRang) {
+    public FullDataDto(String flightNumber, Date flightDate, Time flightTime, String planeTaleNumber, String planeBrandModel, Integer planeCapacity, String pilotFullName, String pilotCodeRang) {
         this.flightNumber = flightNumber;
         this.flightDate = flightDate;
         this.flightTime = flightTime;

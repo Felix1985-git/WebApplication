@@ -1,6 +1,6 @@
 package com.example.kuzmichevjsp.controller;
 
-import com.example.kuzmichevjsp.entity.Flight;
+import com.example.kuzmichevjsp.dto.FlightDto;
 import com.example.kuzmichevjsp.service.FlightService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,25 +22,26 @@ public class FlightController {
 
     @GetMapping(value = "/getFlightByIdJDBC")
     public String getFlightByIdJDBC (@RequestParam("id") int id, Model model) {
-        model.addAttribute("flights", flightService.getFlightByIdJDBC(id));
+        model.addAttribute("flight", flightService.getFlightByIdJDBC(id));
         return "flightsByID";
     }
 
     @GetMapping(value =  "/flightsList")
     public String getAllFlightJDBC(Model model) {
-        model.addAttribute("flights", flightService.getAllFlightJDBC());
+        model.addAttribute("flight", flightService.getAllFlightJDBC());
         return "flightsList";
     }
     @RequestMapping("/addFlight")
-    public String newCustomerForm(Map<String, Object> model) {
-        Flight flight = new Flight();
+    public String addFlightForm(Map<String, Object> model) {
+        FlightDto flight = new FlightDto();
         model.put("flight", flight);
         return "addFlight";
     }
 
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String saveCustomer(@ModelAttribute("flight") Flight flight) {
-        flightService.insertFlightJDBC();
+    @RequestMapping(value = "/saveNewFlight", method = RequestMethod.POST)
+    public String saveFlight(@ModelAttribute("flight") FlightDto flight) {
+
+        flightService.insertFlightJDBC(flight);
         return "redirect:/";
     }
 

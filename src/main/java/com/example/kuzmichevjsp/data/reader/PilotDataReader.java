@@ -1,7 +1,7 @@
 package com.example.kuzmichevjsp.data.reader;
 
 import com.example.kuzmichevjsp.builder.PilotBuilder;
-import com.example.kuzmichevjsp.entity.Pilot;
+import com.example.kuzmichevjsp.dto.PilotDto;
 import com.example.kuzmichevjsp.exception.EmptyDataFileException;
 
 import java.io.BufferedReader;
@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PilotDataReader implements FileDataReader<Pilot> {
+public class PilotDataReader implements FileDataReader<PilotDto> {
     private final String fileName;
 
     public PilotDataReader(String fileName) {
@@ -19,14 +19,14 @@ public class PilotDataReader implements FileDataReader<Pilot> {
     }
 
     @Override
-    public List<Pilot> read() throws EmptyDataFileException {
-        List<Pilot> pilots = new ArrayList<>();
+    public List<PilotDto> read() throws EmptyDataFileException {
+        List<PilotDto> pilots = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String pilotLine;
 
             while ((pilotLine = reader.readLine()) != null) {
-                Pilot pilot = PilotBuilder.build(pilotLine);
+                PilotDto pilot = PilotBuilder.build(pilotLine);
 
                 pilots.add(pilot);
             }

@@ -1,5 +1,5 @@
 package com.example.kuzmichevjsp.builder;
-import com.example.kuzmichevjsp.entity.Flight;
+import com.example.kuzmichevjsp.dto.FlightDto;
 import com.example.kuzmichevjsp.validator.FlightValidator;
 
 import java.sql.Date;
@@ -8,7 +8,7 @@ import java.sql.Time;
 import static com.example.kuzmichevjsp.builder.CsvConstants.CSV_DELIMITER;
 
 public class FlightBuilder {
-    public static Flight build(String flightsLine) {
+    public static FlightDto build(String flightsLine) {
         String[] flightsData = flightsLine.split(CSV_DELIMITER);
 
         int id = Integer.parseInt(flightsData[0]);
@@ -18,7 +18,7 @@ public class FlightBuilder {
         Time time = Time.valueOf(flightsData[4]);
         String number = flightsData[5];
 
-        Flight flight = new Flight(id, planesId, pilotsId, date, time, number);
+        FlightDto flight = new FlightDto(id, planesId, pilotsId, date, time, number);
 
         FlightValidator.validateFlight(flight);
 

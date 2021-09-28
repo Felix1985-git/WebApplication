@@ -1,11 +1,11 @@
 package com.example.kuzmichevjsp.validator;
 
-import com.example.kuzmichevjsp.entity.Pilot;
+import com.example.kuzmichevjsp.dto.PilotDto;
 import com.example.kuzmichevjsp.exception.NullFieldException;
 
 public class PilotValidator {
 
-    public static void validatePilot(Pilot pilot) {
+    public static void validatePilot(PilotDto pilot) {
 
         if (pilot.getFirstName() == null) {
             throw new NullFieldException("firstName");

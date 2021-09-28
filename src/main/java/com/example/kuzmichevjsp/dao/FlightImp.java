@@ -1,6 +1,6 @@
 package com.example.kuzmichevjsp.dao;
 
-import com.example.kuzmichevjsp.entity.Flight;
+import com.example.kuzmichevjsp.dto.FlightDto;
 import com.example.kuzmichevjsp.rowMapper.FlightRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -16,7 +16,7 @@ public class FlightImp implements FlightDao {
 
     private final String GET_FLIGHT_BY_ID_JDBC = "select * from flights where id = ?";
     private final String GET_ALL_FLIGHT_JDBC = "select * from flights";
-    private final String INSERT_FLIGHT_JDBC = "INSERT INTO flights (PLANES_ID , PILOTS_ID , DATE , TIME, NUMBER) VALUES(?, ?, '?', '?', ?)";
+    private final String INSERT_FLIGHT_JDBC = "INSERT INTO flights (PLANES_ID , PILOTS_ID , DATE , TIME, NUMBER) VALUES(?, ?, \'?\', \'?\', ?)";
 
     @Autowired
     public FlightImp(JdbcTemplate jdbcTemplate) {
@@ -24,17 +24,17 @@ public class FlightImp implements FlightDao {
     }
 
     @Override
-    public Flight getFlightByIdJDBC(int id) {
+    public FlightDto getFlightByIdJDBC(int id) {
         return jdbcTemplate.queryForObject(GET_FLIGHT_BY_ID_JDBC, new FlightRowMapper(), id);
     }
 
     @Override
-    public List<Flight> getAllFlightJDBC() {
+    public List<FlightDto> getAllFlightJDBC() {
         return jdbcTemplate.query(GET_ALL_FLIGHT_JDBC, new FlightRowMapper());
     }
 
     @Override
-    public void insertFlightJDBC() {
+    public void insertFlightJDBC(FlightDto flight) {
         jdbcTemplate.update(INSERT_FLIGHT_JDBC);
     }
 

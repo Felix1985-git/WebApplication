@@ -1,7 +1,7 @@
 package com.example.kuzmichevjsp.data.reader;
 
 import com.example.kuzmichevjsp.builder.FlightBuilder;
-import com.example.kuzmichevjsp.entity.Flight;
+import com.example.kuzmichevjsp.dto.FlightDto;
 import com.example.kuzmichevjsp.exception.EmptyDataFileException;
 
 import java.io.BufferedReader;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class FlightDataReader implements FileDataReader<Flight> {
+public class FlightDataReader implements FileDataReader<FlightDto> {
     private final String fileName;
 
     public FlightDataReader(String fileName) {
@@ -20,14 +20,14 @@ public class FlightDataReader implements FileDataReader<Flight> {
     }
 
     @Override
-    public List<Flight> read() throws EmptyDataFileException {
-        List<Flight> flights = new ArrayList<>();
+    public List<FlightDto> read() throws EmptyDataFileException {
+        List<FlightDto> flights = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String flightsLine;
 
             while ((flightsLine = reader.readLine()) != null) {
-                Flight flight = FlightBuilder.build(flightsLine);
+                FlightDto flight = FlightBuilder.build(flightsLine);
 
                 flights.add(flight);
             }

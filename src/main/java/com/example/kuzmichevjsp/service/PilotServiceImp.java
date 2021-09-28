@@ -1,7 +1,7 @@
 package com.example.kuzmichevjsp.service;
 
 import com.example.kuzmichevjsp.dao.PilotDao;
-import com.example.kuzmichevjsp.entity.Pilot;
+import com.example.kuzmichevjsp.dto.PilotDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,12 +18,12 @@ public class PilotServiceImp implements PilotService {
     }
 
     @Override
-    public Pilot getPilotByIdJDBC(int id) {
+    public PilotDto getPilotByIdJDBC(int id) {
         return pilotDao.getPilotByIdJDBC(id);
     }
 
     @Override
-    public List<Pilot> getAllPilotJDBC() {
+    public List<PilotDto> getAllPilotJDBC() {
         return pilotDao.getAllPilotJDBC();
     }
 }

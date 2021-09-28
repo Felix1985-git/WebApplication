@@ -1,12 +1,10 @@
-package com.example.kuzmichevjsp.entity;
+package com.example.kuzmichevjsp.dto;
 
 
-import javax.persistence.Entity;
 import java.sql.Date;
 import java.sql.Time;
 
-
-public class Flight {
+public class FlightDto {
     private int id;
     private Integer planesId;
     private Integer pilotsId;
@@ -14,10 +12,10 @@ public class Flight {
     private Time time;
     private String number;
 
-    public Flight() {
+    public FlightDto() {
     }
 
-    public Flight(int id, Integer planesId, Integer pilotsId, Date date, Time time, String number) {
+    public FlightDto(int id, Integer planesId, Integer pilotsId, Date date, Time time, String number) {
         this.id = id;
         this.planesId = planesId;
         this.pilotsId = pilotsId;
@@ -26,7 +24,8 @@ public class Flight {
         this.number = number;
     }
 
-    public Flight(Integer planesId, Integer pilotsId, Date date, Time time, String number) {
+    public FlightDto(Integer planesId, Integer pilotsId, Date date, Time time, String number) {
+
         this.planesId = planesId;
         this.pilotsId = pilotsId;
         this.date = date;

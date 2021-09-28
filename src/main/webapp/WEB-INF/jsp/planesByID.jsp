@@ -16,11 +16,11 @@
             <th>tale number</th>
         </tr>
             <tr>
-                <td>${planes.id}</td>
-                <td>${planes.brand}</td>
-                <td>${planes.model}</td>
-                <td>${planes.capacity}</td>
-                <td>${planes.taleNumber}</td>
+                <td>${plane.id}</td>
+                <td>${plane.brand}</td>
+                <td>${plane.model}</td>
+                <td>${plane.capacity}</td>
+                <td>${plane.taleNumber}</td>
             </tr>
     </table>
 </div>

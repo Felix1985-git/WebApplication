@@ -15,10 +15,10 @@
             <th>number</th>
         </tr>
             <tr>
-                <td>${flights.id}</td>
-                <td>${flights.date}</td>
-                <td>${flights.time}</td>
-                <td>${flights.number}</td>
+                <td>${flight.id}</td>
+                <td>${flight.date}</td>
+                <td>${flight.time}</td>
+                <td>${flight.number}</td>
             </tr>
     </table>
 

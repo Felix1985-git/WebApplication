@@ -19,13 +19,13 @@ public class PlaneController {
 
     @GetMapping(value = "/getPlaneByIdJDBC")
     public String getPlaneByIdJDBC (@RequestParam("id") int id, Model model) {
-        model.addAttribute("planes", planeService.getPlaneByIdJDBC(id));
+        model.addAttribute("plane", planeService.getPlaneByIdJDBC(id));
         return "planesByID";
     }
 
     @GetMapping(value =  "/planesList")
     public String getAllFlightJDBC(Model model) {
-        model.addAttribute("planes", planeService.getAllPlaneJDBC());
+        model.addAttribute("plane", planeService.getAllPlaneJDBC());
         return "planesList";
     }
 }
