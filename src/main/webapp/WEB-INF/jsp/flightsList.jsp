@@ -1,0 +1,34 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Flights list</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css"/>
+</head>
+<body>
+<h1>Flights list</h1>
+
+<br/><br/>
+<div>
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>date</th>
+            <th>time</th>
+            <th>number</th>
+        </tr>
+        <c:forEach  items="${flights}" var ="flights">
+            <tr>
+                <td>${flights.id}</td>
+                <td>${flights.date}</td>
+                <td>${flights.time}</td>
+                <td>${flights.number}</td>
+            </tr>
+        </c:forEach>
+    </table>
+</div>
+</body>
+
+</html>

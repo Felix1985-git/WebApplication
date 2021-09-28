@@ -5,6 +5,8 @@ import com.example.kuzmichevjsp.entity.Flight;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class FlightServiceImp implements FlightService {
 
@@ -18,5 +20,10 @@ public class FlightServiceImp implements FlightService {
     @Override
     public Flight getFlightByIdJDBC(int id) {
         return flightDao.getFlightByIdJDBC(id);
+    }
+
+    @Override
+    public List<Flight> getAllFlightJDBC() {
+        return flightDao.getAllFlightJDBC();
     }
 }

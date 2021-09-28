@@ -1,10 +1,11 @@
 package com.example.kuzmichevjsp.controller;
 
+import com.example.kuzmichevjsp.entity.Flight;
 import com.example.kuzmichevjsp.service.FlightService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -17,8 +18,14 @@ public class FlightController {
         this.flightService = flightService;
     }
 
-    @RequestMapping (value = "/getFlightByIdJDBC", method = RequestMethod.GET)
-    public void getFlightByIdJDBC (@RequestParam("id") int id) {
-        System.out.println(flightService.getFlightByIdJDBC(id));
+    @GetMapping(value = "/getFlightByIdJDBC")
+    public Flight getFlightByIdJDBC (@RequestParam("id") int id) {
+        return flightService.getFlightByIdJDBC(id);
+    }
+
+    @GetMapping(value =  "/flightsList")
+    public String getAllFlightJDBC(Model model) {
+        model.addAttribute("flights", flightService.getAllFlightJDBC());
+        return "flightsList";
     }
 }

@@ -5,6 +5,8 @@ import com.example.kuzmichevjsp.entity.Pilot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PilotServiceImp implements PilotService {
 
@@ -18,5 +20,10 @@ public class PilotServiceImp implements PilotService {
     @Override
     public Pilot getPilotByIdJDBC(int id) {
         return pilotDao.getPilotByIdJDBC(id);
+    }
+
+    @Override
+    public List<Pilot> getAllPilotJDBC() {
+        return pilotDao.getAllPilotJDBC();
     }
 }

@@ -5,6 +5,8 @@ import com.example.kuzmichevjsp.entity.Plane;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PlaneServiceImp implements PlaneService {
 
@@ -18,5 +20,10 @@ public class PlaneServiceImp implements PlaneService {
     @Override
     public Plane getPlaneByIdJDBC(int id) {
         return planeDao.getPlaneByIdJDBC(id);
+    }
+
+    @Override
+    public List<Plane> getAllPlaneJDBC() {
+        return planeDao.getAllPlaneJDBC();
     }
 }
