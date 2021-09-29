@@ -55,7 +55,7 @@ public class PilotDto {
         this.lastName = lastName;
     }
 
-    public void setRang(String string, RangDto rang) {
+    public void setRang(RangDto rang) {
         this.rang = rang;
     }
 

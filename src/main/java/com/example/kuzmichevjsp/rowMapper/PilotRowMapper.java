@@ -16,7 +16,7 @@ public class PilotRowMapper implements RowMapper<PilotDto> {
         pilot.setId(resultSet.getInt(1));
         pilot.setFirstName(resultSet.getString(2));
         pilot.setLastName(resultSet.getString(3));
-        pilot.setRang(resultSet.getString(4), RangDto.valueOf(resultSet.getString(4)));
+        pilot.setRang(RangDto.valueOf(resultSet.getString(4)));
         pilot.setCode(resultSet.getString(5));
         return pilot;
     }
