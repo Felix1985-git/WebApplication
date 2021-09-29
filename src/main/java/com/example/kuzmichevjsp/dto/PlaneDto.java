@@ -17,6 +17,12 @@ public class PlaneDto {
         this.capacity = capacity;
         this.taleNumber = taleNumber;
     }
+    public PlaneDto(String brand, String model, int capacity, String taleNumber) {
+        this.brand = brand;
+        this.model = model;
+        this.capacity = capacity;
+        this.taleNumber = taleNumber;
+    }
 
     public int getId() {
         return id;

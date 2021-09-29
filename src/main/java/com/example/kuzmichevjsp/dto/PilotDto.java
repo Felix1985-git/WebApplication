@@ -17,7 +17,12 @@ public class PilotDto {
         this.rang = rang;
         this.code = code;
     }
-
+    public PilotDto(String firstName, String lastName, RangDto rang, String code) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.rang = rang;
+        this.code = code;
+    }
     public int getId() {
         return id;
     }

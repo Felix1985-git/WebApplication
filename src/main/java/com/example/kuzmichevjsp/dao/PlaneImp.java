@@ -15,6 +15,7 @@ public class PlaneImp implements PlaneDao {
     private JdbcTemplate jdbcTemplate;
     private final String GET_PLANE_BY_ID_JDBC = "select * from planes where id = ?";
     private final String GET_ALL_PLANE_JDBC = "select * from planes";
+    private final String INSERT_PLANE_JDBC = "INSERT INTO planes (BRAND, MODEL, CAPACITY, TALE_NUMBER) VALUES(?, ?, ?, ?)";
 
     @Autowired
     public PlaneImp(JdbcTemplate jdbcTemplate) {
@@ -29,5 +30,10 @@ public class PlaneImp implements PlaneDao {
     @Override
     public List<PlaneDto> getAllPlaneJDBC() {
         return jdbcTemplate.query(GET_ALL_PLANE_JDBC, new PlaneRowMapper());
+    }
+
+    @Override
+    public void insertPlaneJDBC(PlaneDto plane) {
+        jdbcTemplate.update(INSERT_PLANE_JDBC, plane.getBrand(), plane.getModel(), plane.getCapacity(), plane.getTaleNumber());
     }
 }

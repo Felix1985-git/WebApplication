@@ -21,16 +21,17 @@ public class FlightController {
     }
 
     @GetMapping(value = "/getFlightByIdJDBC")
-    public String getFlightByIdJDBC (@RequestParam("id") int id, Model model) {
+    public String getFlightByIdJDBC(@RequestParam("id") int id, Model model) {
         model.addAttribute("flight", flightService.getFlightByIdJDBC(id));
         return "flightsByID";
     }
 
-    @GetMapping(value =  "/flightsList")
+    @GetMapping(value = "/flightsList")
     public String getAllFlightJDBC(Model model) {
         model.addAttribute("flight", flightService.getAllFlightJDBC());
         return "flightsList";
     }
+
     @RequestMapping("/addFlight")
     public String addFlightForm(Map<String, Object> model) {
         FlightDto flight = new FlightDto();
@@ -44,8 +45,6 @@ public class FlightController {
         flightService.insertFlightJDBC(flight);
         return "redirect:/";
     }
-
-
 
 
 }

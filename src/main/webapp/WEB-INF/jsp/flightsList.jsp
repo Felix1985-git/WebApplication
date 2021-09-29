@@ -1,9 +1,9 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Flights list</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css"/>
 </head>
@@ -19,7 +19,7 @@
             <th>time</th>
             <th>number</th>
         </tr>
-        <c:forEach  items="${flight}" var ="flight">
+        <c:forEach items="${flight}" var="flight">
             <tr>
                 <td>${flight.id}</td>
                 <td>${flight.date}</td>
@@ -31,10 +31,6 @@
     <td>
         <h3><a href="/addFlight">Create New Flight</a></h3>
     </td>
-
 </div>
-
-
 </body>
-
 </html>

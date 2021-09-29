@@ -6,37 +6,32 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>Add flight</title>
+    <title>Add plane</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css"/>
 </head>
 <body>
 <div align="center">
-    <h2>Add flight</h2>
+    <h2>Add plane</h2>
 
 
-
-    <%--@elvariable id="flight" type="java"--%>
-    <form:form action="saveNewFlight" method="post" modelAttribute="flight">
+    <%--@elvariable id="plane" type="java"--%>
+    <form:form action="saveNewPlane" method="post" modelAttribute="plane">
         <table border="0" cellpadding="5">
             <tr>
-                <td>planesId</td>
-                <td><form:input path="planesId" /></td>
+                <td>brand</td>
+                <td><form:input path="brand" /></td>
             </tr>
             <tr>
-                <td>pilotsId</td>
-                <td><form:input path="pilotsId" /></td>
+                <td>model</td>
+                <td><form:input path="model" /></td>
             </tr>
             <tr>
-                <td>date(YYYY-MM-DD)</td>
-                <td><form:input path="date" /></td>
+                <td>capacity</td>
+                <td><form:input path="capacity" /></td>
             </tr>
             <tr>
-                <td>time(HH:MM:SS)</td>
-                <td><form:input path="time" /></td>
-            </tr>
-            <tr>
-                <td>number</td>
-                <td><form:input path="number" /></td>
+                <td>taleNumber</td>
+                <td><form:input path="taleNumber" /></td>
             </tr>
             <tr>
                 <td colspan="2"><input type="submit" value="Save"></td>

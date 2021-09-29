@@ -26,4 +26,9 @@ public class PilotServiceImp implements PilotService {
     public List<PilotDto> getAllPilotJDBC() {
         return pilotDao.getAllPilotJDBC();
     }
+
+    @Override
+    public void insertPilotJDBC(PilotDto pilot) {
+        pilotDao.insertPilotJDBC(pilot);
+    }
 }

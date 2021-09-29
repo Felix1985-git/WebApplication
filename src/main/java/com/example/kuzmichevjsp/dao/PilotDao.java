@@ -7,4 +7,5 @@ import java.util.List;
 public interface PilotDao {
     PilotDto getPilotByIdJDBC(int id);
     List<PilotDto> getAllPilotJDBC();
+    void insertPilotJDBC (PilotDto pilot);
 }

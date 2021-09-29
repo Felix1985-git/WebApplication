@@ -30,6 +30,9 @@
             </tr>
         </c:forEach>
     </table>
+    <td>
+        <h3><a href="/addPlane">Create New Plane</a></h3>
+    </td>
 </div>
 </body>
 
