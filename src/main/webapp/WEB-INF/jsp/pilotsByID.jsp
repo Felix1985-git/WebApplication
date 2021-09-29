@@ -1,7 +1,8 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>PilotsById</title>
 </head>
 <body>
@@ -15,13 +16,13 @@
             <th>rang</th>
             <th>code</th>
         </tr>
-            <tr>
-                <td>${pilot.id}</td>
-                <td>${pilot.firstName}</td>
-                <td>${pilot.lastName}</td>
-                <td>${pilot.rang}</td>
-                <td>${pilot.code}</td>
-            </tr>
+        <tr>
+            <td>${pilot.id}</td>
+            <td>${pilot.firstName}</td>
+            <td>${pilot.lastName}</td>
+            <td>${pilot.rang}</td>
+            <td>${pilot.code}</td>
+        </tr>
     </table>
 </div>
 

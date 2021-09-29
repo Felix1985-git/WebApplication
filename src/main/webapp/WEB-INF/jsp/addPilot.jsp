@@ -1,13 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+         pageEncoding="ISO-8859-1" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<!DOCTYPE HTML>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta charset="UTF-8"/>
     <title>Add pilot</title>
 </head>
 <body>
-<h1>Add pilot</h1>
-<div>
+<div align="center">
+    <h2>Add pilot</h2>
     <%--    &lt;%&ndash;@elvariable id="pilot" type="java"&ndash;%&gt;--%>
     <%--    <form:form action="saveNewPilot" method="post" modelAttribute="pilot">--%>
     <%--        <table border="0" cellpadding="5">--%>

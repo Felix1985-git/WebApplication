@@ -1,7 +1,8 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>PlanesById</title>
 </head>
 <body>
@@ -15,13 +16,13 @@
             <th>capacity</th>
             <th>tale number</th>
         </tr>
-            <tr>
-                <td>${plane.id}</td>
-                <td>${plane.brand}</td>
-                <td>${plane.model}</td>
-                <td>${plane.capacity}</td>
-                <td>${plane.taleNumber}</td>
-            </tr>
+        <tr>
+            <td>${plane.id}</td>
+            <td>${plane.brand}</td>
+            <td>${plane.model}</td>
+            <td>${plane.capacity}</td>
+            <td>${plane.taleNumber}</td>
+        </tr>
     </table>
 </div>
 
