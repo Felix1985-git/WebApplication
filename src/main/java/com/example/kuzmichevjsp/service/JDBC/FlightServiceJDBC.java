@@ -1,10 +1,10 @@
-package com.example.kuzmichevjsp.service;
+package com.example.kuzmichevjsp.service.JDBC;
 
 import com.example.kuzmichevjsp.dto.FlightDto;
 
 import java.util.List;
 
-public interface FlightService {
+public interface FlightServiceJDBC {
 
     FlightDto getFlightByIdJDBC(int id);
     List<FlightDto> getAllFlightJDBC();

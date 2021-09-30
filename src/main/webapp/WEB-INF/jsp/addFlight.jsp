@@ -42,6 +42,9 @@
             </tr>
         </table>
     </form:form>
+    <td>
+        <h3><a href="/">Home</a></h3>
+    </td>
 </div>
 </body>
 </html>

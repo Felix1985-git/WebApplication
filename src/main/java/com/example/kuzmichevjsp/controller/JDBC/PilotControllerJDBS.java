@@ -1,23 +1,20 @@
-package com.example.kuzmichevjsp.controller;
+package com.example.kuzmichevjsp.controller.JDBC;
 
-import com.example.kuzmichevjsp.dto.FlightDto;
 import com.example.kuzmichevjsp.dto.PilotDto;
-import com.example.kuzmichevjsp.dto.RangDto;
-import com.example.kuzmichevjsp.service.PilotService;
+import com.example.kuzmichevjsp.service.JDBC.PilotServiceJDBC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.font.NumericShaper;
 import java.util.Map;
 
 @Controller
-public class PilotController {
-    private PilotService pilotService;
+public class PilotControllerJDBS {
+    private PilotServiceJDBC pilotService;
 
     @Autowired
-    public PilotController(PilotService pilotService) {
+    public PilotControllerJDBS(PilotServiceJDBC pilotService) {
         this.pilotService = pilotService;
     }
 

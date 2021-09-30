@@ -8,9 +8,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css"/>
 </head>
 <body>
-<h1>Flights list</h1>
-
-<br/><br/>
+<h2>Flights list</h2>
 <div>
     <table border="1">
         <tr>
@@ -18,6 +16,7 @@
             <th>date</th>
             <th>time</th>
             <th>number</th>
+            <th>delete</th>
         </tr>
         <c:forEach items="${flight}" var="flight">
             <tr>
@@ -25,11 +24,20 @@
                 <td>${flight.date}</td>
                 <td>${flight.time}</td>
                 <td>${flight.number}</td>
+                <td>
+                    <form method="get" action="deleteFlightById">
+                        <input type="submit" value="   ${flight.id}  " name="id"/>
+                    </form>
+                </td>
             </tr>
         </c:forEach>
     </table>
+    <h1></h1>
+    <form method="get" action="addFlight">
+        <input type="submit" value="Create new flight"/>
+    </form>
     <td>
-        <h3><a href="/addFlight">Create New Flight</a></h3>
+        <h3><a href="/">Home</a></h3>
     </td>
 </div>
 </body>

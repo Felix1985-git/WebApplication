@@ -1,10 +1,10 @@
-package com.example.kuzmichevjsp.dao;
+package com.example.kuzmichevjsp.dao.JDBC;
 
 import com.example.kuzmichevjsp.dto.PilotDto;
 
 import java.util.List;
 
-public interface PilotDao {
+public interface PilotDaoJDBC {
     PilotDto getPilotByIdJDBC(int id);
     List<PilotDto> getAllPilotJDBC();
     void insertPilotJDBC (PilotDto pilot);

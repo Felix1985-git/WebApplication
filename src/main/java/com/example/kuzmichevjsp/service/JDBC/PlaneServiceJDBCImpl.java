@@ -1,7 +1,6 @@
-package com.example.kuzmichevjsp.service;
+package com.example.kuzmichevjsp.service.JDBC;
 
-import com.example.kuzmichevjsp.dao.PlaneDao;
-import com.example.kuzmichevjsp.dto.FlightDto;
+import com.example.kuzmichevjsp.dao.JDBC.PlaneDaoJDBC;
 import com.example.kuzmichevjsp.dto.PlaneDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,12 +8,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class PlaneServiceImp implements PlaneService {
+public class PlaneServiceJDBCImpl implements PlaneServiceJDBC {
 
-    private PlaneDao planeDao;
+    private PlaneDaoJDBC planeDao;
 
     @Autowired
-    public PlaneServiceImp(PlaneDao planeDao) {
+    public PlaneServiceJDBCImpl(PlaneDaoJDBC planeDao) {
         this.planeDao = planeDao;
     }
 

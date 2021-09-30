@@ -13,8 +13,8 @@ public class PlaneRowMapper implements RowMapper<PlaneDto> {
         PlaneDto plane = new PlaneDto();
         plane.setId(resultSet.getInt(1));
         plane.setBrand(resultSet.getString(2));
-        plane.setModel(resultSet.getString(3));
-        plane.setCapacity(resultSet.getInt(4));
+        plane.setCapacity(resultSet.getInt(3));
+        plane.setModel(resultSet.getString(4));
         plane.setTaleNumber(resultSet.getString(5));
         return plane;
     }

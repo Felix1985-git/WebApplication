@@ -1,6 +1,6 @@
-package com.example.kuzmichevjsp.service;
+package com.example.kuzmichevjsp.service.JDBC;
 
-import com.example.kuzmichevjsp.dao.PilotDao;
+import com.example.kuzmichevjsp.dao.JDBC.PilotDaoJDBC;
 import com.example.kuzmichevjsp.dto.PilotDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class PilotServiceImp implements PilotService {
+public class PilotServiceJDBCImpl implements PilotServiceJDBC {
 
-    private PilotDao pilotDao;
+    private PilotDaoJDBC pilotDao;
 
     @Autowired
-    public PilotServiceImp(PilotDao pilotDao) {
+    public PilotServiceJDBCImpl(PilotDaoJDBC pilotDao) {
         this.pilotDao = pilotDao;
     }
 

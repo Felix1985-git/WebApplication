@@ -8,8 +8,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css"/>
 </head>
 <body>
-<h1>Pilots list</h1>
-<br/><br/>
+<h2>Pilots list</h2>
 <div>
     <table border="1">
         <tr>
@@ -18,6 +17,7 @@
             <th>last name</th>
             <th>rang</th>
             <th>code</th>
+            <th>delete</th>
         </tr>
         <c:forEach items="${pilot}" var="pilot">
             <tr>
@@ -26,11 +26,20 @@
                 <td>${pilot.lastName}</td>
                 <td>${pilot.rang}</td>
                 <td>${pilot.code}</td>
+                <td>
+                    <form method="get" action="deletePilotById">
+                        <input type="submit" value="   ${pilot.id}  " name="id"/>
+                    </form>
+                </td>
             </tr>
         </c:forEach>
     </table>
+    <h1></h1>
+    <form method="get" action="addPilot">
+        <input type="submit" value="Create new pilot"/>
+    </form>
     <td>
-        <h3><a href="/addPilot">Create New Pilot</a></h3>
+        <h3><a href="/">Home</a></h3>
     </td>
 </div>
 </body>

@@ -1,8 +1,7 @@
-package com.example.kuzmichevjsp.controller;
+package com.example.kuzmichevjsp.controller.JDBC;
 
-import com.example.kuzmichevjsp.dto.FlightDto;
 import com.example.kuzmichevjsp.dto.PlaneDto;
-import com.example.kuzmichevjsp.service.PlaneService;
+import com.example.kuzmichevjsp.service.JDBC.PlaneServiceJDBC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,12 +10,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 @Controller
-public class PlaneController {
+public class PlaneControllerJDBS {
 
-    private PlaneService planeService;
+    private PlaneServiceJDBC planeService;
 
     @Autowired
-    public PlaneController(PlaneService planeService) {
+    public PlaneControllerJDBS(PlaneServiceJDBC planeService) {
         this.planeService = planeService;
     }
 

@@ -41,7 +41,7 @@
                action="${pageContext.request.contextPath}/saveNewPilot" method="post"
                acceptCharset="UTF-8">
 
-        <table class="table-bordered">
+        <table border="0" cellpadding="5">
             <tr>
                 <td>firstName</td>
                 <td><form:input path="firstName"/></td>
@@ -63,12 +63,14 @@
             <tr>
                 </form:select>
             </tr>
-
+            <tr>
+                <td><input type="submit" value="Save"></td>
+            </tr>
         </table>
-        <tr>
-            <td colspan="2"><input type="submit" value="Save"></td>
-        </tr>
     </form:form>
+    <td>
+        <h3><a href="/">Home</a></h3>
+    </td>
 </div>
 </body>
 </html>

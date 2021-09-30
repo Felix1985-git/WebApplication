@@ -20,7 +20,7 @@
             <td>
                 <form method="get" action="getFlightByIdJDBC">
                     <input type="text" name="id"/>
-                    <input type="submit" value="Search by ID"/>
+                    <input type="submit" value="Search by Id"/>
                 </form>
             </td>
             <td>
@@ -32,7 +32,7 @@
             <td>
                 <form method="get" action="getPilotByIdJDBC">
                     <input type="text" name="id"/>
-                    <input type="submit" value="Search by ID"/>
+                    <input type="submit" value="Search by Id"/>
                 </form>
             </td>
             <td>
@@ -44,7 +44,7 @@
             <td>
                 <form method="get" action="getPlaneByIdJDBC">
                     <input type="text" name="id"/>
-                    <input type="submit" value="Search by ID"/>
+                    <input type="submit" value="Search by Id"/>
                 </form>
             </td>
             <td>

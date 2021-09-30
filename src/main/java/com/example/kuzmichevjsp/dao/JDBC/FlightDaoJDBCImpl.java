@@ -1,4 +1,4 @@
-package com.example.kuzmichevjsp.dao;
+package com.example.kuzmichevjsp.dao.JDBC;
 
 import com.example.kuzmichevjsp.dto.FlightDto;
 import com.example.kuzmichevjsp.rowMapper.FlightRowMapper;
@@ -10,7 +10,7 @@ import java.util.List;
 
 
 @Repository
-public class FlightImp implements FlightDao {
+public class FlightDaoJDBCImpl implements FlightDaoJDBC {
 
     private JdbcTemplate jdbcTemplate;
 
@@ -19,7 +19,7 @@ public class FlightImp implements FlightDao {
     private final String INSERT_FLIGHT_JDBC = "INSERT INTO flights (PLANES_ID , PILOTS_ID , DATE , TIME, NUMBER) VALUES(?, ?, ?, ?, ?)";
 
     @Autowired
-    public FlightImp(JdbcTemplate jdbcTemplate) {
+    public FlightDaoJDBCImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 

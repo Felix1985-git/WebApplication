@@ -1,10 +1,10 @@
-package com.example.kuzmichevjsp.service;
+package com.example.kuzmichevjsp.service.JDBC;
 
 import com.example.kuzmichevjsp.dto.PilotDto;
 
 import java.util.List;
 
-public interface PilotService {
+public interface PilotServiceJDBC {
 
     PilotDto getPilotByIdJDBC(int id);
     List<PilotDto> getAllPilotJDBC();

@@ -1,7 +1,7 @@
-package com.example.kuzmichevjsp.controller;
+package com.example.kuzmichevjsp.controller.JDBC;
 
 import com.example.kuzmichevjsp.dto.FlightDto;
-import com.example.kuzmichevjsp.service.FlightService;
+import com.example.kuzmichevjsp.service.JDBC.FlightServiceJDBC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,12 +11,12 @@ import java.util.Map;
 
 
 @Controller
-public class FlightController {
+public class FlightControllerJDBS {
 
-    private FlightService flightService;
+    private FlightServiceJDBC flightService;
 
     @Autowired
-    public FlightController(FlightService flightService) {
+    public FlightControllerJDBS(FlightServiceJDBC flightService) {
         this.flightService = flightService;
     }
 
@@ -45,6 +45,5 @@ public class FlightController {
         flightService.insertFlightJDBC(flight);
         return "redirect:/";
     }
-
 
 }

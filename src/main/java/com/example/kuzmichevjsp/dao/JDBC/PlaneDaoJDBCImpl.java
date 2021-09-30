@@ -1,4 +1,4 @@
-package com.example.kuzmichevjsp.dao;
+package com.example.kuzmichevjsp.dao.JDBC;
 
 import com.example.kuzmichevjsp.dto.PlaneDto;
 import com.example.kuzmichevjsp.rowMapper.PlaneRowMapper;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class PlaneImp implements PlaneDao {
+public class PlaneDaoJDBCImpl implements PlaneDaoJDBC {
 
     private JdbcTemplate jdbcTemplate;
     private final String GET_PLANE_BY_ID_JDBC = "select * from planes where id = ?";
@@ -18,7 +18,7 @@ public class PlaneImp implements PlaneDao {
     private final String INSERT_PLANE_JDBC = "INSERT INTO planes (BRAND, MODEL, CAPACITY, TALE_NUMBER) VALUES(?, ?, ?, ?)";
 
     @Autowired
-    public PlaneImp(JdbcTemplate jdbcTemplate) {
+    public PlaneDaoJDBCImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 

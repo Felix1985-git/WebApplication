@@ -1,7 +1,6 @@
-package com.example.kuzmichevjsp.dao;
+package com.example.kuzmichevjsp.dao.JDBC;
 
 import com.example.kuzmichevjsp.dto.PilotDto;
-import com.example.kuzmichevjsp.dto.RangDto;
 import com.example.kuzmichevjsp.rowMapper.PilotRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -10,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class PilotImp implements PilotDao {
+public class PilotDaoJDBCImpl implements PilotDaoJDBC {
 
     private JdbcTemplate jdbcTemplate;
     private final String GET_PILOT_BY_ID_JDBC = "select * from pilots where id = ?";
@@ -18,7 +17,7 @@ public class PilotImp implements PilotDao {
     private final String INSERT_PILOT_JDBC = "INSERT INTO pilots (FIRST_NAME , LAST_NAME, RANG , CODE) VALUES(?, ?, ?, ?)";
 
     @Autowired
-    public PilotImp(JdbcTemplate jdbcTemplate) {
+    public PilotDaoJDBCImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 

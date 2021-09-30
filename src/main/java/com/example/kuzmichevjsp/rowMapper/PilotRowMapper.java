@@ -14,10 +14,10 @@ public class PilotRowMapper implements RowMapper<PilotDto> {
     public PilotDto mapRow(ResultSet resultSet, int i) throws SQLException {
         PilotDto pilot = new PilotDto();
         pilot.setId(resultSet.getInt(1));
-        pilot.setFirstName(resultSet.getString(2));
-        pilot.setLastName(resultSet.getString(3));
-        pilot.setRang(RangDto.valueOf(resultSet.getString(4)));
-        pilot.setCode(resultSet.getString(5));
+        pilot.setCode(resultSet.getString(2));
+        pilot.setFirstName(resultSet.getString(3));
+        pilot.setLastName(resultSet.getString(4));
+        pilot.setRang(RangDto.valueOf(resultSet.getString(5)));
         return pilot;
     }
 }
