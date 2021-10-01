@@ -1,6 +1,12 @@
 package com.example.kuzmichevjsp.service.JPA;
 
 
+import com.example.kuzmichevjsp.entity.Flight;
+
+import java.util.Optional;
+
 public interface FlightServiceJPA {
-    void deleteFlightById(int id);
+    void deleteFlightByIdJPA(int id);
+    void updateFlightByIdJPA (Flight flight);
+    Optional<Flight> getFlightByIdJPA(int id);
 }

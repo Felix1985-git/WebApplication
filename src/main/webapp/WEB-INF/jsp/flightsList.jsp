@@ -17,6 +17,7 @@
             <th>time</th>
             <th>number</th>
             <th>delete</th>
+            <th>update</th>
         </tr>
         <c:forEach items="${flight}" var="flight">
             <tr>
@@ -29,6 +30,11 @@
                         <input type="submit" value="   ${flight.id}  " name="id"/>
                     </form>
                 </td>
+                <td>
+                    <form method="get" action="updateFlight">
+                        <input type="submit" value="   ${flight.id}   " name="id"/>
+                    </form>
+                </td>
             </tr>
         </c:forEach>
     </table>
@@ -36,6 +42,10 @@
     <form method="get" action="addFlight">
         <input type="submit" value="Create new flight"/>
     </form>
+<%--    <h1></h1>--%>
+<%--    <form method="get" action="updateFlight">--%>
+<%--        <input type="submit" value="1"/>--%>
+<%--    </form>--%>
     <td>
         <h3><a href="/">Home</a></h3>
     </td>

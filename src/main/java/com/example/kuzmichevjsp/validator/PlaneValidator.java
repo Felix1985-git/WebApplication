@@ -19,7 +19,7 @@ public class PlaneValidator {
             throw new NullFieldException("capacity");
         }
 
-        if (plane.getTaleNumber() == null) {
+        if (plane.getTale_number() == null) {
             throw new NullFieldException("taleNumber");
         }
 

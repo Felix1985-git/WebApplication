@@ -41,7 +41,6 @@ public class FlightControllerJDBS {
 
     @RequestMapping(value = "/saveNewFlight", method = RequestMethod.POST)
     public String saveFlight(@ModelAttribute("flight") FlightDto flight) {
-
         flightService.insertFlightJDBC(flight);
         return "redirect:/";
     }

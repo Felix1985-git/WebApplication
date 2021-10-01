@@ -18,6 +18,7 @@
             <th>capacity</th>
             <th>tale number</th>
             <th>delete</th>
+            <th>update</th>
         </tr>
         <c:forEach items="${plane}" var="plane">
             <tr>
@@ -25,10 +26,15 @@
                 <td>${plane.brand}</td>
                 <td>${plane.model}</td>
                 <td>${plane.capacity}</td>
-                <td>${plane.taleNumber}</td>
+                <td>${plane.tale_number}</td>
                 <td>
                     <form method="get" action="deletePlaneById">
                         <input type="submit" value="   ${plane.id}  " name="id"/>
+                    </form>
+                </td>
+                <td>
+                    <form method="get" action="updatePlane">
+                        <input type="submit" value="   ${plane.id}   " name="id"/>
                     </form>
                 </td>
             </tr>

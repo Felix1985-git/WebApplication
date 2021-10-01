@@ -27,7 +27,7 @@ public class PlaneWriter {
                 statement.setString(2, plane.getBrand());
                 statement.setString(3, plane.getModel());
                 statement.setInt(4, plane.getCapacity());
-                statement.setString(5, plane.getTaleNumber());
+                statement.setString(5, plane.getTale_number());
 
                 statement.executeUpdate();
             } catch (SQLException e) {

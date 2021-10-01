@@ -15,7 +15,7 @@ public class PlaneRowMapper implements RowMapper<PlaneDto> {
         plane.setBrand(resultSet.getString(2));
         plane.setCapacity(resultSet.getInt(3));
         plane.setModel(resultSet.getString(4));
-        plane.setTaleNumber(resultSet.getString(5));
+        plane.setTale_number(resultSet.getString(5));
         return plane;
     }
 }

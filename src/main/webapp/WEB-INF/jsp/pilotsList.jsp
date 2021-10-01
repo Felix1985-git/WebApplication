@@ -18,17 +18,23 @@
             <th>rang</th>
             <th>code</th>
             <th>delete</th>
+            <th>update</th>
         </tr>
         <c:forEach items="${pilot}" var="pilot">
             <tr>
                 <td>${pilot.id}</td>
-                <td>${pilot.firstName}</td>
-                <td>${pilot.lastName}</td>
+                <td>${pilot.first_name}</td>
+                <td>${pilot.last_name}</td>
                 <td>${pilot.rang}</td>
                 <td>${pilot.code}</td>
                 <td>
                     <form method="get" action="deletePilotById">
                         <input type="submit" value="   ${pilot.id}  " name="id"/>
+                    </form>
+                </td>
+                <td>
+                    <form method="get" action="updatePilot">
+                        <input type="submit" value="   ${pilot.id}   " name="id"/>
                     </form>
                 </td>
             </tr>

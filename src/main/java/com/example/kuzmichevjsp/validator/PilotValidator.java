@@ -7,11 +7,11 @@ public class PilotValidator {
 
     public static void validatePilot(PilotDto pilot) {
 
-        if (pilot.getFirstName() == null) {
+        if (pilot.getFirst_name() == null) {
             throw new NullFieldException("firstName");
         }
 
-        if (pilot.getLastName() == null) {
+        if (pilot.getLast_name() == null) {
             throw new NullFieldException("lastName");
         }
 

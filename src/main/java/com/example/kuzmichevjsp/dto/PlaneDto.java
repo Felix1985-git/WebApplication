@@ -5,63 +5,64 @@ public class PlaneDto {
     private String brand;
     private String model;
     private Integer capacity;
-    private String taleNumber;
+    private String tale_number;
 
     public PlaneDto() {
     }
 
-    public PlaneDto(int id, String brand, String model, int capacity, String taleNumber) {
+    public PlaneDto(int id, String brand, String model, Integer capacity, String tale_number) {
         this.id = id;
         this.brand = brand;
         this.model = model;
         this.capacity = capacity;
-        this.taleNumber = taleNumber;
+        this.tale_number = tale_number;
     }
-    public PlaneDto(String brand, String model, int capacity, String taleNumber) {
+
+    public PlaneDto(String brand, String model, Integer capacity, String tale_number) {
         this.brand = brand;
         this.model = model;
         this.capacity = capacity;
-        this.taleNumber = taleNumber;
+        this.tale_number = tale_number;
     }
 
     public int getId() {
         return id;
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public Integer getCapacity() {
-        return capacity;
-    }
-
-    public String getTaleNumber() {
-        return taleNumber;
-    }
-
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getBrand() {
+        return brand;
     }
 
     public void setBrand(String brand) {
         this.brand = brand;
     }
 
+    public String getModel() {
+        return model;
+    }
+
     public void setModel(String model) {
         this.model = model;
+    }
+
+    public Integer getCapacity() {
+        return capacity;
     }
 
     public void setCapacity(Integer capacity) {
         this.capacity = capacity;
     }
 
-    public void setTaleNumber(String taleNumber) {
-        this.taleNumber = taleNumber;
+    public String getTale_number() {
+        return tale_number;
+    }
+
+    public void setTale_number(String tale_number) {
+        this.tale_number = tale_number;
     }
 
     @Override
@@ -71,7 +72,7 @@ public class PlaneDto {
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", capacity='" + capacity + '\'' +
-                ", taleNumber='" + taleNumber + '\'' +
+                ", taleNumber='" + tale_number + '\'' +
                 '}';
     }
 }

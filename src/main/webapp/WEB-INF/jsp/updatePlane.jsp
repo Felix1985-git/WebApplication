@@ -1,22 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+         pageEncoding="ISO-8859-1" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <meta charset="UTF-8" />
-    <title>Add plane</title>
+    <meta charset="UTF-8"/>
+    <title>Update plane</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css"/>
 </head>
 <body>
 <div align="center">
-    <h2>Add plane</h2>
+    <h2>Update plane</h2>
 
 
     <%--@elvariable id="plane" type="java"--%>
-    <form:form action="saveNewPlane" method="post" modelAttribute="plane">
+    <form:form action="updatePlaneById" method="post" modelAttribute="plane">
         <table border="0" cellpadding="5">
+            <tr>
+                <td>Id</td>
+                <td><form:input path="Id"/></td>
+            </tr>
             <tr>
                 <td>brand</td>
                 <td><form:input path="brand" /></td>

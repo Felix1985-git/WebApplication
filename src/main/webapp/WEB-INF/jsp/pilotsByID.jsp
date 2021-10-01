@@ -18,8 +18,8 @@
         </tr>
         <tr>
             <td>${pilot.id}</td>
-            <td>${pilot.firstName}</td>
-            <td>${pilot.lastName}</td>
+            <td>${pilot.first_name}</td>
+            <td>${pilot.last_name}</td>
             <td>${pilot.rang}</td>
             <td>${pilot.code}</td>
         </tr>

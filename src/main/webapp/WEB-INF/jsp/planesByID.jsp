@@ -21,7 +21,7 @@
             <td>${plane.brand}</td>
             <td>${plane.model}</td>
             <td>${plane.capacity}</td>
-            <td>${plane.taleNumber}</td>
+            <td>${plane.tale_number}</td>
         </tr>
     </table>
     <td>

@@ -44,11 +44,11 @@
         <table border="0" cellpadding="5">
             <tr>
                 <td>firstName</td>
-                <td><form:input path="firstName"/></td>
+                <td><form:input path="first_name"/></td>
             </tr>
             <tr>
                 <td>lastName</td>
-                <td><form:input path="lastName"/></td>
+                <td><form:input path="last_name"/></td>
             </tr>
             <tr>
                 <td>code</td>

@@ -33,6 +33,6 @@ public class PilotDaoJDBCImpl implements PilotDaoJDBC {
 
     @Override
     public void insertPilotJDBC(PilotDto pilot) {
-        jdbcTemplate.update(INSERT_PILOT_JDBC, pilot.getFirstName(), pilot.getLastName(), pilot.getRang().toString(), pilot.getCode());
+        jdbcTemplate.update(INSERT_PILOT_JDBC, pilot.getFirst_name(), pilot.getLast_name(), pilot.getRang().toString(), pilot.getCode());
     }
 }

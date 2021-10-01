@@ -34,6 +34,6 @@ public class PlaneDaoJDBCImpl implements PlaneDaoJDBC {
 
     @Override
     public void insertPlaneJDBC(PlaneDto plane) {
-        jdbcTemplate.update(INSERT_PLANE_JDBC, plane.getBrand(), plane.getModel(), plane.getCapacity(), plane.getTaleNumber());
+        jdbcTemplate.update(INSERT_PLANE_JDBC, plane.getBrand(), plane.getModel(), plane.getCapacity(), plane.getTale_number());
     }
 }
