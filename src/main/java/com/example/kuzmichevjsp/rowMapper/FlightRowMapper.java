@@ -14,9 +14,9 @@ public class FlightRowMapper implements RowMapper <FlightDto> {
         flight.setId(resultSet.getInt(1));
         flight.setDate(resultSet.getDate(2));
         flight.setNumber(resultSet.getString(3));
-        flight.setPilotsId(resultSet.getInt(4));
-        flight.setPlanesId(resultSet.getInt(5));
-        flight.setTime(resultSet.getTime(6));
+        flight.setTime(resultSet.getTime(4));
+        flight.setPilotsId(resultSet.getInt(5));
+        flight.setPlanesId(resultSet.getInt(6));
         return flight;
     }
 }

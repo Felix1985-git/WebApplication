@@ -10,10 +10,12 @@ public class Flight {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column
-    private Integer planesId;
-    @Column
-    private Integer pilotsId;
+    @ManyToOne (cascade = CascadeType.REFRESH)
+    @JoinColumn (name = "planes_Id")
+    private Plane plane;
+    @ManyToOne (cascade = CascadeType.REFRESH)
+    @JoinColumn (name = "pilots_Id")
+    private Pilot pilot;
     @Column(nullable = false)
     private Date date;
     @Column(nullable = false)
@@ -21,13 +23,18 @@ public class Flight {
     @Column(unique = true)
     private String number;
 
+
+
+//    FOREIGN KEY (planes_id) REFERENCES planes(id)
+//    FOREIGN KEY (pilots_id) REFERENCES pilots(id)
+
     public Flight() {
     }
 
-    public Flight(Integer id, Integer planesId, Integer pilotsId, Date date, Time time, String number) {
+    public Flight(Integer id, Plane plane, Pilot pilot, Date date, Time time, String number) {
         this.id = id;
-        this.planesId = planesId;
-        this.pilotsId = pilotsId;
+        this.plane = plane;
+        this.pilot = pilot;
         this.date = date;
         this.time = time;
         this.number = number;
@@ -41,20 +48,20 @@ public class Flight {
         this.id = id;
     }
 
-    public Integer getPlanesId() {
-        return planesId;
+    public Plane getPlane() {
+        return plane;
     }
 
-    public void setPlanesId(Integer planesId) {
-        this.planesId = planesId;
+    public void setPlane(Plane plane) {
+        this.plane = plane;
     }
 
-    public Integer getPilotsId() {
-        return pilotsId;
+    public Pilot getPilot() {
+        return pilot;
     }
 
-    public void setPilotsId(Integer pilotsId) {
-        this.pilotsId = pilotsId;
+    public void setPilot(Pilot pilot) {
+        this.pilot = pilot;
     }
 
     public Date getDate() {
