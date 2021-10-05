@@ -2,13 +2,13 @@ package com.example.kuzmichevjsp.controller.JDBC;
 
 import com.example.kuzmichevjsp.dto.FlightDto;
 import com.example.kuzmichevjsp.service.JDBC.FlightServiceJDBC;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
-
 
 @Controller
 public class FlightControllerJDBS {
@@ -42,7 +42,7 @@ public class FlightControllerJDBS {
     @RequestMapping(value = "/saveNewFlight", method = RequestMethod.POST)
     public String saveFlight(@ModelAttribute("flight") FlightDto flight) {
         flightService.insertFlightJDBC(flight);
-        return "redirect:/";
+        return "redirect:/flightsList";
     }
 
 }

@@ -2,6 +2,7 @@ package com.example.kuzmichevjsp.dao.JDBC;
 
 import com.example.kuzmichevjsp.dto.PilotDto;
 import com.example.kuzmichevjsp.rowMapper.PilotRowMapper;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -33,6 +34,6 @@ public class PilotDaoJDBCImpl implements PilotDaoJDBC {
 
     @Override
     public void insertPilotJDBC(PilotDto pilot) {
-        jdbcTemplate.update(INSERT_PILOT_JDBC, pilot.getFirst_name(), pilot.getLast_name(), pilot.getRang().toString(), pilot.getCode());
+        jdbcTemplate.update(INSERT_PILOT_JDBC, pilot.getFirstName(), pilot.getLastName(), pilot.getRang().toString(), pilot.getCode());
     }
 }

@@ -1,13 +1,11 @@
 package com.example.kuzmichevjsp.service.JPA;
 
-
 import com.example.kuzmichevjsp.dao.JPA.FlightDaoJPA;
 import com.example.kuzmichevjsp.entity.Flight;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 
 @Service
 public class FlightServiceJPAImpl implements FlightServiceJPA{

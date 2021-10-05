@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class FlightDataReader implements FileDataReader<FlightDto> {
     private final String fileName;
 

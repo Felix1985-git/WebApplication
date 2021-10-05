@@ -1,6 +1,5 @@
 package com.example.kuzmichevjsp.service.JDBC;
 
-
 import com.example.kuzmichevjsp.dao.JDBC.FlightDaoJDBC;
 import com.example.kuzmichevjsp.dto.FlightDto;
 
@@ -9,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
 
 @Service
 public class FlightServiceJDBCImpl implements FlightServiceJDBC {

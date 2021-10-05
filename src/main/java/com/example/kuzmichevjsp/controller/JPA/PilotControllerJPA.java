@@ -1,8 +1,8 @@
 package com.example.kuzmichevjsp.controller.JPA;
 
-import com.example.kuzmichevjsp.entity.Flight;
 import com.example.kuzmichevjsp.entity.Pilot;
 import com.example.kuzmichevjsp.service.JPA.PilotServiceJPA;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +21,7 @@ public class PilotControllerJPA {
     @GetMapping(value = "/deletePilotById")
     public String deletePilotById(@RequestParam("id") int id) {
         pilotServiceJPA.deletePilotByIdJPA(id);
-        return "index";
+        return "redirect:/pilotsList";
     }
 
     @RequestMapping("/updatePilot")
@@ -33,7 +33,7 @@ public class PilotControllerJPA {
     @RequestMapping(value = "/updatePilotById", method = RequestMethod.POST)
     public String updatePilotById(@ModelAttribute("pilot") Pilot pilot) {
         pilotServiceJPA.updatePilotByIdJPA(pilot);
-        return "redirect:/";
+        return "redirect:/pilotsList";
     }
 
 }

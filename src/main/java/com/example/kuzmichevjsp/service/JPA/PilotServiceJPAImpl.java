@@ -1,6 +1,5 @@
 package com.example.kuzmichevjsp.service.JPA;
 
-
 import com.example.kuzmichevjsp.dao.JPA.PilotDaoJPA;
 import com.example.kuzmichevjsp.entity.Pilot;
 
@@ -9,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
-
 
 @Service
 public class PilotServiceJPAImpl implements PilotServiceJPA{

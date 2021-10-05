@@ -12,8 +12,6 @@
 <body>
 <div align="center">
     <h2>Update flight</h2>
-
-
     <%--@elvariable id="flight" type="java"--%>
     <form:form action="updateFlightById" method="post" modelAttribute="flight">
         <table border="0" cellpadding="5">

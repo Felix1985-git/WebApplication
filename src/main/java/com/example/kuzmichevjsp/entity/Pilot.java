@@ -10,10 +10,10 @@ public class Pilot {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(nullable = false)
-    private String first_name;
-    @Column(nullable = false)
-    private String last_name;
+    @Column(name="first_name", nullable = false)
+    private String firstName;
+    @Column(name="last_name", nullable = false)
+    private String lastName;
     @Column
     @Enumerated(EnumType.STRING)
     private RangDto rang;
@@ -23,10 +23,10 @@ public class Pilot {
     public Pilot() {
     }
 
-    public Pilot(Integer id, String first_name, String last_name, RangDto rang, String code) {
+    public Pilot(Integer id, String firstName, String lastName, RangDto rang, String code) {
         this.id = id;
-        this.first_name = first_name;
-        this.last_name = last_name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.rang = rang;
         this.code = code;
     }
@@ -39,20 +39,20 @@ public class Pilot {
         this.id = id;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public RangDto getRang() {

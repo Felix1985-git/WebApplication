@@ -35,7 +35,7 @@
             </tr>
             <tr>
                 <td>taleNumber</td>
-                <td><form:input path="tale_number" /></td>
+                <td><form:input path="taleNumber" /></td>
             </tr>
             <tr>
                 <td colspan="2"><input type="submit" value="Save"></td>

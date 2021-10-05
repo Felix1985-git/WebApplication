@@ -14,18 +14,18 @@ public class Plane {
     String model;
     @Column (nullable = false)
     Integer capacity;
-    @Column (nullable = false,unique = true)
-    String tale_number;
+    @Column (name = "tale_number", nullable = false,unique = true)
+    String taleNumber;
 
     public Plane() {
     }
 
-    public Plane(Integer id, String brand, String model, Integer capacity, String tale_number) {
+    public Plane(Integer id, String brand, String model, Integer capacity, String taleNumber) {
         this.id = id;
         this.brand = brand;
         this.model = model;
         this.capacity = capacity;
-        this.tale_number = tale_number;
+        this.taleNumber = taleNumber;
     }
 
     public Integer getId() {
@@ -60,12 +60,12 @@ public class Plane {
         this.capacity = capacity;
     }
 
-    public String getTale_number() {
-        return tale_number;
+    public String getTaleNumber() {
+        return taleNumber;
     }
 
-    public void setTale_number(String tale_number) {
-        this.tale_number = tale_number;
+    public void setTaleNumber(String taleNumber) {
+        this.taleNumber = taleNumber;
     }
 }
 

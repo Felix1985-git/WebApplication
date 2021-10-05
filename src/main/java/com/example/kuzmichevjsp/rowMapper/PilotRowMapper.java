@@ -7,7 +7,6 @@ import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
 public class PilotRowMapper implements RowMapper<PilotDto> {
 
     @Override
@@ -15,8 +14,8 @@ public class PilotRowMapper implements RowMapper<PilotDto> {
         PilotDto pilot = new PilotDto();
         pilot.setId(resultSet.getInt(1));
         pilot.setCode(resultSet.getString(2));
-        pilot.setFirst_name(resultSet.getString(3));
-        pilot.setLast_name(resultSet.getString(4));
+        pilot.setFirstName(resultSet.getString(3));
+        pilot.setLastName(resultSet.getString(4));
         pilot.setRang(RangDto.valueOf(resultSet.getString(5)));
         return pilot;
     }

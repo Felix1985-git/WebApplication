@@ -2,6 +2,7 @@ package com.example.kuzmichevjsp.controller.JDBC;
 
 import com.example.kuzmichevjsp.dto.PlaneDto;
 import com.example.kuzmichevjsp.service.JDBC.PlaneServiceJDBC;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,8 +41,7 @@ public class PlaneControllerJDBS {
 
     @RequestMapping(value = "/saveNewPlane", method = RequestMethod.POST)
     public String saveFlight(@ModelAttribute("plane") PlaneDto plane) {
-
         planeService.insertPlaneJDBC(plane);
-        return "redirect:/";
+        return "redirect:/planesList";
     }
 }

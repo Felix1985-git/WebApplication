@@ -2,12 +2,12 @@ package com.example.kuzmichevjsp.dao.JDBC;
 
 import com.example.kuzmichevjsp.dto.FlightDto;
 import com.example.kuzmichevjsp.rowMapper.FlightRowMapper;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
 
 @Repository
 public class FlightDaoJDBCImpl implements FlightDaoJDBC {

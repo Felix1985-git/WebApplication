@@ -2,9 +2,9 @@ package com.example.kuzmichevjsp.dao.JDBC;
 
 import com.example.kuzmichevjsp.dto.PlaneDto;
 import com.example.kuzmichevjsp.rowMapper.PlaneRowMapper;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -34,6 +34,6 @@ public class PlaneDaoJDBCImpl implements PlaneDaoJDBC {
 
     @Override
     public void insertPlaneJDBC(PlaneDto plane) {
-        jdbcTemplate.update(INSERT_PLANE_JDBC, plane.getBrand(), plane.getModel(), plane.getCapacity(), plane.getTale_number());
+        jdbcTemplate.update(INSERT_PLANE_JDBC, plane.getBrand(), plane.getModel(), plane.getCapacity(), plane.getTaleNumber());
     }
 }

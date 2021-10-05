@@ -3,7 +3,6 @@ package com.example.kuzmichevjsp.validator;
 import com.example.kuzmichevjsp.dto.FlightDto;
 import com.example.kuzmichevjsp.exception.NullFieldException;
 
-
 public class FlightValidator {
 
     public static void validateFlight(FlightDto flight) {

@@ -1,7 +1,5 @@
 package com.example.kuzmichevjsp.db.writer;
 
-
-
 import com.example.kuzmichevjsp.dto.PilotDto;
 import com.example.kuzmichevjsp.util.ConnectionUtil;
 
@@ -9,8 +7,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
-
-
 
 public class PilotWriter {
 
@@ -23,8 +19,8 @@ public class PilotWriter {
         for (PilotDto pilot : pilots) {
             try (PreparedStatement statement = connection.prepareStatement(INSERT)) {
                 statement.setInt(1, pilot.getId());
-                statement.setString(2, pilot.getFirst_name());
-                statement.setString(3, pilot.getLast_name());
+                statement.setString(2, pilot.getFirstName());
+                statement.setString(3, pilot.getLastName());
                 statement.setString(4, pilot.getRang().toString());
                 statement.setString(5, pilot.getCode());
 

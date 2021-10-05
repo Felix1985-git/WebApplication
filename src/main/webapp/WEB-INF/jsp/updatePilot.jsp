@@ -12,8 +12,6 @@
 <body>
 <div align="center">
     <h2>Update pilot</h2>
-
-
     <%--@elvariable id="pilot" type="java"--%>
     <form:form action="updatePilotById" method="post" modelAttribute="pilot">
         <table border="0" cellpadding="5">
@@ -23,11 +21,11 @@
             </tr>
             <tr>
                 <td>firstName</td>
-                <td><form:input path="first_name"/></td>
+                <td><form:input path="firstName"/></td>
             </tr>
             <tr>
                 <td>lastName</td>
-                <td><form:input path="last_name"/></td>
+                <td><form:input path="lastName"/></td>
             </tr>
             <tr>
                 <td>code</td>

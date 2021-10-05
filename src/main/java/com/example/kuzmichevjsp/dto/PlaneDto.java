@@ -5,24 +5,24 @@ public class PlaneDto {
     private String brand;
     private String model;
     private Integer capacity;
-    private String tale_number;
+    private String taleNumber;
 
     public PlaneDto() {
     }
 
-    public PlaneDto(int id, String brand, String model, Integer capacity, String tale_number) {
+    public PlaneDto(int id, String brand, String model, Integer capacity, String taleNumber) {
         this.id = id;
         this.brand = brand;
         this.model = model;
         this.capacity = capacity;
-        this.tale_number = tale_number;
+        this.taleNumber = taleNumber;
     }
 
-    public PlaneDto(String brand, String model, Integer capacity, String tale_number) {
+    public PlaneDto(String brand, String model, Integer capacity, String taleNumber) {
         this.brand = brand;
         this.model = model;
         this.capacity = capacity;
-        this.tale_number = tale_number;
+        this.taleNumber = taleNumber;
     }
 
     public int getId() {
@@ -57,12 +57,12 @@ public class PlaneDto {
         this.capacity = capacity;
     }
 
-    public String getTale_number() {
-        return tale_number;
+    public String getTaleNumber() {
+        return taleNumber;
     }
 
-    public void setTale_number(String tale_number) {
-        this.tale_number = tale_number;
+    public void setTaleNumber(String taleNumber) {
+        this.taleNumber = taleNumber;
     }
 
     @Override
@@ -72,7 +72,7 @@ public class PlaneDto {
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", capacity='" + capacity + '\'' +
-                ", taleNumber='" + tale_number + '\'' +
+                ", taleNumber='" + taleNumber + '\'' +
                 '}';
     }
 }

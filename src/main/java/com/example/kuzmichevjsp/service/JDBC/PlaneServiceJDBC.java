@@ -1,6 +1,5 @@
 package com.example.kuzmichevjsp.service.JDBC;
 
-import com.example.kuzmichevjsp.dto.FlightDto;
 import com.example.kuzmichevjsp.dto.PlaneDto;
 
 import java.util.List;

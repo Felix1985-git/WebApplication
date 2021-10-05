@@ -8,7 +8,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
-
 public class FlightWriter {
 
     private static final String INSERT_TABLE = "flights";

@@ -2,25 +2,25 @@ package com.example.kuzmichevjsp.dto;
 
 public class PilotDto {
     private int id;
-    private String first_name;
-    private String last_name;
+    private String firstName;
+    private String lastName;
     private RangDto rang;
     private String code;
 
     public PilotDto() {
     }
 
-    public PilotDto(int id, String first_name, String last_name, RangDto rang, String code) {
+    public PilotDto(int id, String firstName, String lastName, RangDto rang, String code) {
         this.id = id;
-        this.first_name = first_name;
-        this.last_name = last_name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.rang = rang;
         this.code = code;
     }
 
-    public PilotDto(String first_name, String last_name, RangDto rang, String code) {
-        this.first_name = first_name;
-        this.last_name = last_name;
+    public PilotDto(String firstName, String lastName, RangDto rang, String code) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.rang = rang;
         this.code = code;
     }
@@ -33,20 +33,20 @@ public class PilotDto {
         this.id = id;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public RangDto getRang() {
@@ -69,8 +69,8 @@ public class PilotDto {
     public String toString() {
         return "Pilots{" +
                 "id=" + id +
-                ", first_name='" + first_name + '\'' +
-                ", last_name='" + last_name + '\'' +
+                ", first_name='" + firstName + '\'' +
+                ", last_name='" + lastName + '\'' +
                 ", rang='" + rang + '\'' +
                 ", code='" + code + '\'' +
                 '}';
