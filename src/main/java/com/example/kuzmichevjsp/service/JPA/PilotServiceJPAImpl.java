@@ -1,13 +1,13 @@
 package com.example.kuzmichevjsp.service.JPA;
 
 import com.example.kuzmichevjsp.dao.JPA.PilotDaoJPA;
+import com.example.kuzmichevjsp.dto.PilotDto;
+import com.example.kuzmichevjsp.dto.RangDto;
 import com.example.kuzmichevjsp.entity.Pilot;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.Optional;
 
 @Service
 public class PilotServiceJPAImpl implements PilotServiceJPA{
@@ -28,14 +28,15 @@ public class PilotServiceJPAImpl implements PilotServiceJPA{
 
     @Override
     @Transactional
-    public void updatePilotByIdJPA(Pilot pilot) {
-        pilotDaoJPA.save(pilot);
+    public void updatePilotByIdJPA(PilotDto pilot) {
+        pilotDaoJPA.save(new Pilot(pilot.getId(), pilot.getFirstName(), pilot.getLastName(), pilot.getRang(), pilot.getCode()));
     }
 
     @Override
     @Transactional
-    public Optional<Pilot> getPilotByIdJPA(int id) {
-        return pilotDaoJPA.findById(id);
+    public PilotDto getPilotByIdJPA(int id) {
+        Pilot pilot = pilotDaoJPA.findById(id).get();
+        return new PilotDto(pilot.getId(), pilot.getFirstName(), pilot.getLastName(), pilot.getRang(), pilot.getCode());
     }
 
 }

@@ -28,6 +28,7 @@ public class Plane {
         this.taleNumber = taleNumber;
     }
 
+
     public Integer getId() {
         return id;
     }

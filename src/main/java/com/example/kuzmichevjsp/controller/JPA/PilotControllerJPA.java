@@ -1,6 +1,6 @@
 package com.example.kuzmichevjsp.controller.JPA;
 
-import com.example.kuzmichevjsp.entity.Pilot;
+import com.example.kuzmichevjsp.dto.PilotDto;
 import com.example.kuzmichevjsp.service.JPA.PilotServiceJPA;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +31,7 @@ public class PilotControllerJPA {
     }
 
     @RequestMapping(value = "/updatePilotById", method = RequestMethod.POST)
-    public String updatePilotById(@ModelAttribute("pilot") Pilot pilot) {
+    public String updatePilotById(@ModelAttribute("pilot") PilotDto pilot) {
         pilotServiceJPA.updatePilotByIdJPA(pilot);
         return "redirect:/pilotsList";
     }

@@ -21,11 +21,11 @@
             </tr>
             <tr>
                 <td>planesId</td>
-                <td><form:input path="plane"/></td>
+                <td><form:input path="planesId"/></td>
             </tr>
             <tr>
                 <td>pilotsId</td>
-                <td><form:input path="pilot"/></td>
+                <td><form:input path="pilotsId"/></td>
             </tr>
             <tr>
                 <td>date(YYYY-MM-DD)</td>

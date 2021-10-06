@@ -40,6 +40,7 @@ public class Flight {
         this.number = number;
     }
 
+
     public Integer getId() {
         return id;
     }
