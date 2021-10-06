@@ -16,42 +16,48 @@
             <th>FullData</th>
         </tr>
         <tr>
-            <td>Flights</td>
+            <td align="center">Flights</td>
             <td>
                 <form method="get" action="getFlightByIdJDBC">
                     <input type="text" name="id"/>
                     <input type="submit" value="Search by Id"/>
                 </form>
             </td>
-            <td>
+            <td align="center">
                 <a href="${pageContext.request.contextPath}/flightsList">Flights List</a>
             </td>
         </tr>
         <tr>
-            <td>Pilots</td>
+            <td align="center">Pilots</td>
             <td>
                 <form method="get" action="getPilotByIdJDBC">
                     <input type="text" name="id"/>
                     <input type="submit" value="Search by Id"/>
                 </form>
             </td>
-            <td>
+            <td align="center">
                 <a href="${pageContext.request.contextPath}/pilotsList">Pilots List</a>
             </td>
         </tr>
         <tr>
-            <td>Planes</td>
+            <td align="center">Planes</td>
             <td>
                 <form method="get" action="getPlaneByIdJDBC">
                     <input type="text" name="id"/>
                     <input type="submit" value="Search by Id"/>
                 </form>
             </td>
-            <td>
+            <td align="center">
                 <a href="${pageContext.request.contextPath}/planesList">Planes List</a>
             </td>
         </tr>
     </table>
+    <h1></h1>
+    <td>
+        <form method="get" action="getFullData">
+            <input type="submit" value="FullData"/>
+        </form>
+    </td>
 </div>
 
 </body>

@@ -22,19 +22,19 @@
         </tr>
         <c:forEach items="${plane}" var="plane">
             <tr>
-                <td>${plane.id}</td>
-                <td>${plane.brand}</td>
-                <td>${plane.model}</td>
-                <td>${plane.capacity}</td>
-                <td>${plane.taleNumber}</td>
-                <td>
+                <td align="center">${plane.id}</td>
+                <td align="center">${plane.brand}</td>
+                <td align="center">${plane.model}</td>
+                <td align="center">${plane.capacity}</td>
+                <td align="center">${plane.taleNumber}</td>
+                <td align="center">
                     <form method="get" action="deletePlaneById">
-                        <input type="submit" value="   ${plane.id}  " name="id"/>
+                        <input type="submit" value="${plane.id}" name="id"/>
                     </form>
                 </td>
-                <td>
+                <td align="center">
                     <form method="get" action="updatePlane">
-                        <input type="submit" value="   ${plane.id}   " name="id"/>
+                        <input type="submit" value="${plane.id}" name="id"/>
                     </form>
                 </td>
             </tr>

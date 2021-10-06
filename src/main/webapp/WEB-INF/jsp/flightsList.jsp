@@ -23,20 +23,20 @@
         </tr>
         <c:forEach items="${flight}" var="flight">
             <tr>
-                <td>${flight.id}</td>
-                <td>${flight.date}</td>
-                <td>${flight.time}</td>
-                <td>${flight.number}</td>
-                <td>${flight.planesId}</td>
-                <td>${flight.pilotsId}</td>
-                <td>
+                <td align="center">${flight.id}</td>
+                <td align="center">${flight.date}</td>
+                <td align="center">${flight.time}</td>
+                <td align="center">${flight.number}</td>
+                <td align="center">${flight.planesId}</td>
+                <td align="center">${flight.pilotsId}</td>
+                <td align="center">
                     <form method="get" action="deleteFlightById">
-                        <input type="submit" value="   ${flight.id}  " name="id"/>
+                        <input type="submit" value="${flight.id}" name="id"/>
                     </form>
                 </td>
-                <td>
+                <td align="center">
                     <form method="get" action="updateFlight">
-                        <input type="submit" value="   ${flight.id}   " name="id"/>
+                        <input type="submit" value="${flight.id}" name="id"/>
                     </form>
                 </td>
             </tr>

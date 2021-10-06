@@ -3,8 +3,10 @@ package com.example.kuzmichevjsp.rowMapper;
 import com.example.kuzmichevjsp.dto.FlightDto;
 import org.springframework.jdbc.core.RowMapper;
 
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Time;
 
 public class FlightRowMapper implements RowMapper <FlightDto> {
 

@@ -22,19 +22,19 @@
         </tr>
         <c:forEach items="${pilot}" var="pilot">
             <tr>
-                <td>${pilot.id}</td>
-                <td>${pilot.firstName}</td>
-                <td>${pilot.lastName}</td>
-                <td>${pilot.rang}</td>
-                <td>${pilot.code}</td>
-                <td>
+                <td align="center">${pilot.id}</td>
+                <td align="center">${pilot.firstName}</td>
+                <td align="center">${pilot.lastName}</td>
+                <td align="center">${pilot.rang}</td>
+                <td align="center">${pilot.code}</td>
+                <td align="center">
                     <form method="get" action="deletePilotById">
-                        <input type="submit" value="   ${pilot.id}  " name="id"/>
+                        <input type="submit" value="${pilot.id}" name="id"/>
                     </form>
                 </td>
-                <td>
+                <td align="center">
                     <form method="get" action="updatePilot">
-                        <input type="submit" value="   ${pilot.id}   " name="id"/>
+                        <input type="submit" value="${pilot.id}" name="id"/>
                     </form>
                 </td>
             </tr>
