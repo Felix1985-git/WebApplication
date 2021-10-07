@@ -3,6 +3,7 @@ package com.example.kuzmichevjsp.entity;
 import com.example.kuzmichevjsp.dto.RangDto;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "pilots")
@@ -19,6 +20,8 @@ public class Pilot {
     private RangDto rang;
     @Column(nullable = false, unique = true)
     private String code;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pilot")
+    private List<Flight> flights;
 
     public Pilot() {
     }
@@ -69,5 +72,13 @@ public class Pilot {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public List<Flight> getFlights() {
+        return flights;
+    }
+
+    public void setFlights(List<Flight> flights) {
+        this.flights = flights;
     }
 }

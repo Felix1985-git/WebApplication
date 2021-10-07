@@ -1,6 +1,7 @@
 package com.example.kuzmichevjsp.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "planes")
@@ -16,6 +17,8 @@ public class Plane {
     Integer capacity;
     @Column (name = "tale_number", nullable = false,unique = true)
     String taleNumber;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "plane")
+    private List<Flight> flights;
 
     public Plane() {
     }
