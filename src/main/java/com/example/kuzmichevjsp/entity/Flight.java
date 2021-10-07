@@ -10,23 +10,21 @@ public class Flight {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn (name = "planes_Id")
     private Plane plane;
+
     @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn (name = "pilots_Id")
     private Pilot pilot;
+
     @Column(nullable = false)
     private Date date;
     @Column(nullable = false)
     private Time time;
     @Column(unique = true)
     private String number;
-
-
-
-//    FOREIGN KEY (planes_id) REFERENCES planes(id)
-//    FOREIGN KEY (pilots_id) REFERENCES pilots(id)
 
     public Flight() {
     }
@@ -39,7 +37,6 @@ public class Flight {
         this.time = time;
         this.number = number;
     }
-
 
     public Integer getId() {
         return id;

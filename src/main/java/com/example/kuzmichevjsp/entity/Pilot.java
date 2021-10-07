@@ -20,6 +20,7 @@ public class Pilot {
     private RangDto rang;
     @Column(nullable = false, unique = true)
     private String code;
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "plane")
     private List<Flight> flights;
 

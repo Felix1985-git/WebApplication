@@ -44,17 +44,6 @@ public class PilotServiceJPAImpl implements PilotServiceJPA{
         return castPilotToPilotDto(pilotDaoJPA.findById(id).get());
     }
 
-    private Pilot castPilotDtoToPilot (PilotDto pilotDto) {
-        Pilot pilot = new Pilot();
-        pilot.setId(pilotDto.getId());
-        pilot.setFirstName(pilotDto.getFirstName());
-        pilot.setLastName(pilotDto.getLastName());
-        pilot.setRang(pilotDto.getRang());
-        pilot.setCode(pilotDto.getCode());
-        pilot.setFlights();
-        return pilot;
-    }
-
     private PilotDto castPilotToPilotDto (Pilot pilot) {
         PilotDto pilotDto = new PilotDto();
         pilotDto.setId(pilot.getId());
@@ -62,52 +51,16 @@ public class PilotServiceJPAImpl implements PilotServiceJPA{
         pilotDto.setLastName(pilot.getLastName());
         pilotDto.setRang(pilot.getRang());
         pilotDto.setCode(pilot.getCode());
-        pilotDto.setFlights();
+        pilotDto.setFlights(castFlightToFlightDto(pilot.getFlights()));
         return pilotDto;
     }
-
-    private Plane castPlaneDtoToPlane (PlaneDto planeDto) {
-        Plane plane = new Plane();
-        plane.setId(planeDto.getId());
-        plane.setBrand(planeDto.getBrand());
-        plane.setModel(planeDto.getModel());
-        plane.setCapacity(planeDto.getCapacity());
-        plane.setTaleNumber(planeDto.getTaleNumber());
-        plane.setFlights();
-        return plane;
-    }
-
-    private PlaneDto castPlaneToPlaneDto (Plane plane) {
-        PlaneDto planeDto = new PlaneDto();
-        planeDto.setId(plane.getId());
-        planeDto.setBrand(plane.getBrand());
-        planeDto.setModel(plane.getModel());
-        planeDto.setCapacity(plane.getCapacity());
-        planeDto.setTaleNumber(plane.getTaleNumber());
-        planeDto.setFlights();
-        return planeDto;
-    }
-
-    private Flight castFlightDtoToFlight (FlightDto flightDto) {
-        Flight flight = new Flight();
-        flight.setId(flightDto.getId());
-        flight.setPlane(castPlaneDtoToPlane(flightDto.getPlane()));
-        flight.setPilot(castPilotDtoToPilot(flightDto.getPilot()));
-        flight.setDate(flightDto.getDate());
-        flight.setTime(flightDto.getTime());
-        flight.setNumber(flightDto.getNumber());
-        return flight;
-    }
-
-    private FlightDto castFlightTyFlightDto (Flight flight) {
-        FlightDto flightDto = new FlightDto();
-        flightDto.setId(flight.getId());
-        flightDto.setPlane(castPlaneToPlaneDto(flight.getPlane()));
-        flightDto.setPilot(castPilotToPilotDto(flight.getPilot()));
-        flightDto.setDate(flight.getDate());
-        flightDto.setTime(flight.getTime());
-        flightDto.setNumber(flight.getNumber());
-        return flightDto;
+    private List<FlightDto> castFlightToFlightDto (List<Flight> flightList) {
+        List<FlightDto> flightDtoList = new ArrayList<>();
+        for (Flight flight:flightList) {
+            FlightDto flightDto = new FlightDto(flight.getId(), flight.getPlane(), flight.getPilot(), flight.getDate(), flight.getTime(), flight.getNumber());
+            flightDtoList.add(flightDto);
+        }
+        return flightDtoList;
     }
 
 

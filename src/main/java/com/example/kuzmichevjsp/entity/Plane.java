@@ -17,6 +17,7 @@ public class Plane {
     private Integer capacity;
     @Column (name = "tale_number", nullable = false,unique = true)
     private String taleNumber;
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "pilot")
     private List<Flight> flights;
 
