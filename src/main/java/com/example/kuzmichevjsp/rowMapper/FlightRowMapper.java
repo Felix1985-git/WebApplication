@@ -1,14 +1,18 @@
 package com.example.kuzmichevjsp.rowMapper;
 
 import com.example.kuzmichevjsp.dto.FlightDto;
+import com.example.kuzmichevjsp.dto.PilotDto;
+import com.example.kuzmichevjsp.dto.PlaneDto;
 import org.springframework.jdbc.core.RowMapper;
 
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Time;
+import java.util.List;
+import java.util.Map;
 
 public class FlightRowMapper implements RowMapper <FlightDto> {
+
+
 
     @Override
     public FlightDto mapRow(ResultSet resultSet, int i) throws SQLException {
@@ -17,8 +21,6 @@ public class FlightRowMapper implements RowMapper <FlightDto> {
         flight.setDate(resultSet.getDate(2));
         flight.setNumber(resultSet.getString(3));
         flight.setTime(resultSet.getTime(4));
-        flight.setPilotsId(resultSet.getInt(5));
-        flight.setPlanesId(resultSet.getInt(6));
         return flight;
     }
 }

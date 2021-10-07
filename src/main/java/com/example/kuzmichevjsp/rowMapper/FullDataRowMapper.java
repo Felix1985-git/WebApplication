@@ -1,17 +1,15 @@
 package com.example.kuzmichevjsp.rowMapper;
 
-import com.example.kuzmichevjsp.dto.FullDataDto;
+import com.example.kuzmichevjsp.dbBuildClass.FullDataDbBuild;
 import org.springframework.jdbc.core.RowMapper;
 
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Time;
 
-public class FullDataRowMapper implements RowMapper <FullDataDto> {
+public class FullDataRowMapper implements RowMapper <FullDataDbBuild> {
     @Override
-    public FullDataDto mapRow(ResultSet resultSet, int i) throws SQLException {
-        FullDataDto fullData = new FullDataDto();
+    public FullDataDbBuild mapRow(ResultSet resultSet, int i) throws SQLException {
+        FullDataDbBuild fullData = new FullDataDbBuild();
         fullData.setFlightNumber(resultSet.getString(1));
         fullData.setFlightDate(resultSet.getDate(2));
         fullData.setFlightTime(resultSet.getTime(3));

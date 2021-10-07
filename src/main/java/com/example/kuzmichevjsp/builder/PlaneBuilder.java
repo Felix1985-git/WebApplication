@@ -1,11 +1,11 @@
 package com.example.kuzmichevjsp.builder;
 
-import com.example.kuzmichevjsp.dto.PlaneDto;
+import com.example.kuzmichevjsp.dbBuildClass.PlaneDbBuild;
 import com.example.kuzmichevjsp.validator.PlaneValidator;
 import static com.example.kuzmichevjsp.builder.CsvConstants.CSV_DELIMITER;
 
 public class PlaneBuilder {
-    public static PlaneDto build(String planesLine) {
+    public static PlaneDbBuild build(String planesLine) {
         String[] planesData = planesLine.split(CSV_DELIMITER);
 
         int id = Integer.parseInt(planesData[0]);
@@ -14,7 +14,7 @@ public class PlaneBuilder {
         Integer capacity = Integer.valueOf(planesData[3]);
         String taleNumber = planesData[4];
 
-        PlaneDto plane = new PlaneDto(id, brand, model, capacity, taleNumber);
+        PlaneDbBuild plane = new PlaneDbBuild(id, brand, model, capacity, taleNumber);
 
         PlaneValidator.validatePlane(plane);
 

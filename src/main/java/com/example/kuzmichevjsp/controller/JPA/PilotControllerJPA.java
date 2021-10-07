@@ -1,5 +1,6 @@
 package com.example.kuzmichevjsp.controller.JPA;
 
+import com.example.kuzmichevjsp.dbBuildClass.PilotDbBuild;
 import com.example.kuzmichevjsp.dto.PilotDto;
 import com.example.kuzmichevjsp.service.JPA.PilotServiceJPA;
 

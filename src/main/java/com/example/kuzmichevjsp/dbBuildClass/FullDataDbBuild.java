@@ -1,9 +1,9 @@
-package com.example.kuzmichevjsp.dto;
+package com.example.kuzmichevjsp.dbBuildClass;
 
 import java.sql.Date;
 import java.sql.Time;
 
-public class FullDataDto {
+public class FullDataDbBuild {
     private String flightNumber;
     private Date flightDate;
     private Time flightTime;
@@ -13,10 +13,10 @@ public class FullDataDto {
     private String pilotFullName;
     private String pilotCodeRang;
 
-    public FullDataDto() {
+    public FullDataDbBuild() {
     }
 
-    public FullDataDto(String flightNumber, Date flightDate, Time flightTime, String planeTaleNumber, String planeBrandModel, Integer planeCapacity, String pilotFullName, String pilotCodeRang) {
+    public FullDataDbBuild(String flightNumber, Date flightDate, Time flightTime, String planeTaleNumber, String planeBrandModel, Integer planeCapacity, String pilotFullName, String pilotCodeRang) {
         this.flightNumber = flightNumber;
         this.flightDate = flightDate;
         this.flightTime = flightTime;

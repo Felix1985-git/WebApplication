@@ -1,6 +1,6 @@
 package com.example.kuzmichevjsp.dao.JDBC;
 
-import com.example.kuzmichevjsp.dto.FullDataDto;
+import com.example.kuzmichevjsp.dbBuildClass.FullDataDbBuild;
 
 import com.example.kuzmichevjsp.rowMapper.FullDataRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ public class FullDataJDBCImpl implements FullDataJDBC{
 
 
     @Override
-    public List<FullDataDto> getFullDataJDBC() {
+    public List<FullDataDbBuild> getFullDataJDBC() {
         return jdbcTemplate.query(SELECT_FULL_DATA, new FullDataRowMapper());
     }
 }

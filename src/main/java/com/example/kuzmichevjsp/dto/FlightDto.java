@@ -1,12 +1,16 @@
 package com.example.kuzmichevjsp.dto;
 
+import com.example.kuzmichevjsp.entity.Pilot;
+import com.example.kuzmichevjsp.entity.Plane;
+
 import java.sql.Date;
 import java.sql.Time;
 
 public class FlightDto {
-    private int id;
-    private Integer planesId;
-    private Integer pilotsId;
+
+    private Integer id;
+    private PlaneDto plane;
+    private PilotDto pilot;
     private Date date;
     private Time time;
     private String number;
@@ -14,81 +18,64 @@ public class FlightDto {
     public FlightDto() {
     }
 
-    public FlightDto(int id, Integer planesId, Integer pilotsId, Date date, Time time, String number) {
+    public FlightDto(Integer id, PlaneDto plane, PilotDto pilot, Date date, Time time, String number) {
         this.id = id;
-        this.planesId = planesId;
-        this.pilotsId = pilotsId;
+        this.plane = plane;
+        this.pilot = pilot;
         this.date = date;
         this.time = time;
         this.number = number;
     }
 
-    public FlightDto(Integer planesId, Integer pilotsId, Date date, Time time, String number) {
 
-        this.planesId = planesId;
-        this.pilotsId = pilotsId;
-        this.date = date;
-        this.time = time;
-        this.number = number;
-    }
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public Integer getPlanesId() {
-        return planesId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Integer getPilotsId() {
-        return pilotsId;
+    public PlaneDto getPlane() {
+        return plane;
+    }
+
+    public void setPlane(PlaneDto plane) {
+        this.plane = plane;
+    }
+
+    public PilotDto getPilot() {
+        return pilot;
+    }
+
+    public void setPilot(PilotDto pilot) {
+        this.pilot = pilot;
     }
 
     public Date getDate() {
         return date;
     }
 
-    public Time getTime() {
-        return time;
-    }
-
-    public String getNumber() {
-        return number;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setPlanesId(Integer planesId) {
-        this.planesId = planesId;
-    }
-
-    public void setPilotsId(Integer pilotsId) {
-        this.pilotsId = pilotsId;
-    }
-
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public Time getTime() {
+        return time;
     }
 
     public void setTime(Time time) {
         this.time = time;
     }
 
+    public String getNumber() {
+        return number;
+    }
+
     public void setNumber(String number) {
         this.number = number;
     }
 
-    @Override
-    public String toString() {
-        return "Flights{" +
-                "id=" + id +
-                ", planesId='" + planesId + '\'' +
-                ", pilotsId='" + pilotsId + '\'' +
-                ", date='" + date + '\'' +
-                ", time='" + time + '\'' +
-                ", number='" + number + '\'' +
-                '}';
-    }
+
 }
+

@@ -1,11 +1,11 @@
 package com.example.kuzmichevjsp.validator;
 
-import com.example.kuzmichevjsp.dto.FlightDto;
+import com.example.kuzmichevjsp.dbBuildClass.FlightDbBuild;
 import com.example.kuzmichevjsp.exception.NullFieldException;
 
 public class FlightValidator {
 
-    public static void validateFlight(FlightDto flight) {
+    public static void validateFlight(FlightDbBuild flight) {
 
         if (flight.getDate() == null) {
             throw new NullFieldException("date");

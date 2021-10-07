@@ -16,8 +16,6 @@
             <th>date</th>
             <th>time</th>
             <th>number</th>
-            <th>planeId</th>
-            <th>pilotId</th>
             <th>delete</th>
             <th>update</th>
         </tr>
@@ -27,8 +25,6 @@
                 <td align="center">${flight.date}</td>
                 <td align="center">${flight.time}</td>
                 <td align="center">${flight.number}</td>
-                <td align="center">${flight.planesId}</td>
-                <td align="center">${flight.pilotsId}</td>
                 <td align="center">
                     <form method="get" action="deleteFlightById">
                         <input type="submit" value="${flight.id}" name="id"/>

@@ -1,33 +1,35 @@
-package com.example.kuzmichevjsp.dto;
+package com.example.kuzmichevjsp.dbBuildClass;
 
-import java.util.List;
-
-public class PlaneDto {
-
-    private Integer id;
+public class PlaneDbBuild {
+    private int id;
     private String brand;
     private String model;
     private Integer capacity;
     private String taleNumber;
-    private List<FlightDto> flights;
 
-    public PlaneDto() {
+    public PlaneDbBuild() {
     }
 
-    public PlaneDto(Integer id, String brand, String model, Integer capacity, String taleNumber, List<FlightDto> flights) {
+    public PlaneDbBuild(int id, String brand, String model, Integer capacity, String taleNumber) {
         this.id = id;
         this.brand = brand;
         this.model = model;
         this.capacity = capacity;
         this.taleNumber = taleNumber;
-        this.flights = flights;
     }
 
-    public Integer getId() {
+    public PlaneDbBuild(String brand, String model, Integer capacity, String taleNumber) {
+        this.brand = brand;
+        this.model = model;
+        this.capacity = capacity;
+        this.taleNumber = taleNumber;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -63,15 +65,14 @@ public class PlaneDto {
         this.taleNumber = taleNumber;
     }
 
-    public List<FlightDto> getFlights() {
-        return flights;
-    }
-
-    public void setFlights(List<FlightDto> flights) {
-        this.flights = flights;
+    @Override
+    public String toString() {
+        return "Planes{" +
+                "id=" + id +
+                ", brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", capacity='" + capacity + '\'' +
+                ", taleNumber='" + taleNumber + '\'' +
+                '}';
     }
 }
-
-
-
-

@@ -1,7 +1,6 @@
 package com.example.kuzmichevjsp.controller.JPA;
 
-import com.example.kuzmichevjsp.dto.FlightDto;
-import com.example.kuzmichevjsp.entity.Flight;
+import com.example.kuzmichevjsp.dbBuildClass.FlightDbBuild;
 import com.example.kuzmichevjsp.service.JPA.FlightServiceJPA;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +31,7 @@ public class FlightControllerJPA {
     }
 
     @RequestMapping(value = "/updateFlightById", method = RequestMethod.POST)
-    public String updateFlightById(@ModelAttribute("flight") FlightDto flight) {
+    public String updateFlightById(@ModelAttribute("flight") FlightDbBuild flight) {
         flightServiceJPA.updateFlightByIdJPA(flight);
         return "redirect:/flightsList";
     }

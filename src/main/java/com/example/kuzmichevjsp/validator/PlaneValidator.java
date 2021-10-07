@@ -1,11 +1,11 @@
 package com.example.kuzmichevjsp.validator;
 
-import com.example.kuzmichevjsp.dto.PlaneDto;
+import com.example.kuzmichevjsp.dbBuildClass.PlaneDbBuild;
 import com.example.kuzmichevjsp.exception.NullFieldException;
 
 public class PlaneValidator {
 
-    public static void validatePlane(PlaneDto plane) {
+    public static void validatePlane(PlaneDbBuild plane) {
 
         if (plane.getBrand() == null) {
             throw new NullFieldException("brand");

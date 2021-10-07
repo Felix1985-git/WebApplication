@@ -2,19 +2,11 @@ package com.example.kuzmichevjsp.service.JPA;
 
 import com.example.kuzmichevjsp.dao.JPA.FlightDaoJPA;
 import com.example.kuzmichevjsp.dto.FlightDto;
-import com.example.kuzmichevjsp.dto.PlaneDto;
 import com.example.kuzmichevjsp.entity.Flight;
 
-import com.example.kuzmichevjsp.entity.Pilot;
-import com.example.kuzmichevjsp.entity.Plane;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import javax.persistence.*;
-import java.sql.Date;
-import java.sql.Time;
 
 @Service
 public class FlightServiceJPAImpl implements FlightServiceJPA{
@@ -42,7 +34,7 @@ public class FlightServiceJPAImpl implements FlightServiceJPA{
     @Transactional
     public FlightDto getFlightByIdJPA(int id) {
         Flight flight = flightDaoJPA.findById(id).get();
-        return new FlightDto(flight.getId(), flight.getPlane().getId(), flight.getPilot().getId(), flight.getDate(), flight.getTime(), flight.getNumber());
+        return new FlightDto(flight.getId(), flight.getPlane(), flight.getPilot(), flight.getDate(), flight.getTime(), flight.getNumber());
     }
 
 }

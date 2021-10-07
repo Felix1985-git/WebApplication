@@ -1,35 +1,36 @@
 package com.example.kuzmichevjsp.dto;
 
+import com.example.kuzmichevjsp.dbBuildClass.RangDbBuild;
+
+import java.util.List;
+
 public class PilotDto {
-    private int id;
+
+    private Integer id;
     private String firstName;
     private String lastName;
     private RangDto rang;
     private String code;
+    private List<FlightDto> flights;
+
 
     public PilotDto() {
     }
 
-    public PilotDto(int id, String firstName, String lastName, RangDto rang, String code) {
+    public PilotDto(Integer id, String firstName, String lastName, RangDto rang, String code, List<FlightDto> flights) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.rang = rang;
         this.code = code;
+        this.flights = flights;
     }
 
-    public PilotDto(String firstName, String lastName, RangDto rang, String code) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.rang = rang;
-        this.code = code;
-    }
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -65,14 +66,12 @@ public class PilotDto {
         this.code = code;
     }
 
-    @Override
-    public String toString() {
-        return "Pilots{" +
-                "id=" + id +
-                ", first_name='" + firstName + '\'' +
-                ", last_name='" + lastName + '\'' +
-                ", rang='" + rang + '\'' +
-                ", code='" + code + '\'' +
-                '}';
+    public List<FlightDto> getFlights() {
+        return flights;
     }
+
+    public void setFlights(List<FlightDto> flights) {
+        this.flights = flights;
+    }
+
 }

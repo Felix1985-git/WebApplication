@@ -1,6 +1,6 @@
 package com.example.kuzmichevjsp.db.writer;
 
-import com.example.kuzmichevjsp.dto.FlightDto;
+import com.example.kuzmichevjsp.dbBuildClass.FlightDbBuild;
 import com.example.kuzmichevjsp.util.ConnectionUtil;
 
 import java.sql.Connection;
@@ -14,10 +14,10 @@ public class FlightWriter {
     private static final String INSERT = "INSERT INTO " + INSERT_TABLE + " (id, planes_id, pilots_id, date, time, number) VALUES(?, ?, ? ,? ,? ,?)";
 
 
-    public static void write(List<FlightDto> flights) {
+    public static void write(List<FlightDbBuild> flights) {
         Connection connection = ConnectionUtil.getConnection();
 
-        for (FlightDto flight : flights) {
+        for (FlightDbBuild flight : flights) {
             try (PreparedStatement statement = connection.prepareStatement(INSERT)) {
                 statement.setInt(1, flight.getId());
                 statement.setInt(2, flight.getPlanesId());

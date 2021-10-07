@@ -35,7 +35,7 @@ public class FlightDaoJDBCImpl implements FlightDaoJDBC {
 
     @Override
     public void insertFlightJDBC(FlightDto flight) {
-        jdbcTemplate.update(INSERT_FLIGHT_JDBC, flight.getPlanesId(), flight.getPilotsId(), flight.getDate(), flight.getTime(), flight.getNumber());
+        jdbcTemplate.update(INSERT_FLIGHT_JDBC, flight.getPlane(), flight.getPilot(), flight.getDate(), flight.getTime(), flight.getNumber());
     }
 
 }

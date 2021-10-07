@@ -43,5 +43,4 @@ public class PilotControllerJDBS {
         pilotService.insertPilotJDBC(pilot);
         return "redirect:/pilotsList";
     }
-
 }

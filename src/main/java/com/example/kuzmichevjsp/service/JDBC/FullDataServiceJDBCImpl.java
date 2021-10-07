@@ -1,7 +1,7 @@
 package com.example.kuzmichevjsp.service.JDBC;
 
 import com.example.kuzmichevjsp.dao.JDBC.FullDataJDBC;
-import com.example.kuzmichevjsp.dto.FullDataDto;
+import com.example.kuzmichevjsp.dbBuildClass.FullDataDbBuild;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,7 +21,7 @@ public class FullDataServiceJDBCImpl implements FullDataServiceJDBC{
 
     @Override
     @Transactional
-    public List<FullDataDto> getFullDataJDBC() {
+    public List<FullDataDbBuild> getFullDataJDBC() {
         return fullData.getFullDataJDBC();
     }
 }

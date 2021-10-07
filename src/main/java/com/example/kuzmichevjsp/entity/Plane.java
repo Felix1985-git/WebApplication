@@ -1,33 +1,36 @@
 package com.example.kuzmichevjsp.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "planes")
 public class Plane {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    private Integer id;
     @Column (nullable = false)
-    String brand;
+    private String brand;
     @Column (nullable = false)
-    String model;
+    private String model;
     @Column (nullable = false)
-    Integer capacity;
+    private Integer capacity;
     @Column (name = "tale_number", nullable = false,unique = true)
-    String taleNumber;
+    private String taleNumber;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pilot")
+    private List<Flight> flights;
 
     public Plane() {
     }
 
-    public Plane(Integer id, String brand, String model, Integer capacity, String taleNumber) {
+    public Plane(Integer id, String brand, String model, Integer capacity, String taleNumber, List<Flight> flights) {
         this.id = id;
         this.brand = brand;
         this.model = model;
         this.capacity = capacity;
         this.taleNumber = taleNumber;
+        this.flights = flights;
     }
-
 
     public Integer getId() {
         return id;
@@ -67,6 +70,14 @@ public class Plane {
 
     public void setTaleNumber(String taleNumber) {
         this.taleNumber = taleNumber;
+    }
+
+    public List<Flight> getFlights() {
+        return flights;
+    }
+
+    public void setFlights(List<Flight> flights) {
+        this.flights = flights;
     }
 }
 

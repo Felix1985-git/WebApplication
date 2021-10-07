@@ -1,7 +1,7 @@
 package com.example.kuzmichevjsp.data.reader;
 
 import com.example.kuzmichevjsp.builder.PlaneBuilder;
-import com.example.kuzmichevjsp.dto.PlaneDto;
+import com.example.kuzmichevjsp.dbBuildClass.PlaneDbBuild;
 import com.example.kuzmichevjsp.exception.EmptyDataFileException;
 
 import java.io.BufferedReader;
@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlaneDataReader implements FileDataReader<PlaneDto> {
+public class PlaneDataReader implements FileDataReader<PlaneDbBuild> {
     private final String fileName;
 
     public PlaneDataReader(String fileName) {
@@ -19,14 +19,14 @@ public class PlaneDataReader implements FileDataReader<PlaneDto> {
     }
 
     @Override
-    public List<PlaneDto> read() throws EmptyDataFileException {
-        List<PlaneDto> planes = new ArrayList<>();
+    public List<PlaneDbBuild> read() throws EmptyDataFileException {
+        List<PlaneDbBuild> planes = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String planesLine;
 
             while ((planesLine = reader.readLine()) != null) {
-                PlaneDto plane = PlaneBuilder.build(planesLine);
+                PlaneDbBuild plane = PlaneBuilder.build(planesLine);
 
                 planes.add(plane);
             }
