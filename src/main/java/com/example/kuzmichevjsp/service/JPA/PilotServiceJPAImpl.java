@@ -12,11 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.Date;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class PilotServiceJPAImpl implements PilotServiceJPA{
+public class PilotServiceJPAImpl implements PilotServiceJPA {
 
     private PilotDaoJPA pilotDaoJPA;
 
@@ -34,35 +36,17 @@ public class PilotServiceJPAImpl implements PilotServiceJPA{
 
     @Override
     @Transactional
-    public void updatePilotByIdJPA(PilotDto pilot) {
-        pilotDaoJPA.save(castPilotDtoToPilot(pilot));
+    public void updatePilotByIdJPA(PilotDto pilotDto) {
+        Pilot pilot = new Pilot(pilotDto.getId(),pilotDto.getFirstName(),pilotDto.getLastName(),pilotDto.getRang(),pilotDto.getCode(),);
+        pilotDaoJPA.save(pilot);
     }
 
     @Override
     @Transactional
     public PilotDto getPilotByIdJPA(int id) {
-        return castPilotToPilotDto(pilotDaoJPA.findById(id).get());
+        Pilot pilot = pilotDaoJPA.findById(id).get();
+        return new PilotDto(pilot.getId(),pilot.getFirstName(),pilot.getLastName(),pilot.getRang(),pilot.getCode(),);
     }
-
-    private PilotDto castPilotToPilotDto (Pilot pilot) {
-        PilotDto pilotDto = new PilotDto();
-        pilotDto.setId(pilot.getId());
-        pilotDto.setFirstName(pilot.getFirstName());
-        pilotDto.setLastName(pilot.getLastName());
-        pilotDto.setRang(pilot.getRang());
-        pilotDto.setCode(pilot.getCode());
-        pilotDto.setFlights(castFlightToFlightDto(pilot.getFlights()));
-        return pilotDto;
-    }
-    private List<FlightDto> castFlightToFlightDto (List<Flight> flightList) {
-        List<FlightDto> flightDtoList = new ArrayList<>();
-        for (Flight flight:flightList) {
-            FlightDto flightDto = new FlightDto(flight.getId(), flight.getPlane(), flight.getPilot(), flight.getDate(), flight.getTime(), flight.getNumber());
-            flightDtoList.add(flightDto);
-        }
-        return flightDtoList;
-    }
-
 
 }
 

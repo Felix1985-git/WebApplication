@@ -9,8 +9,8 @@ import java.sql.Time;
 public class FlightDto {
 
     private Integer id;
-    private PlaneDto plane;
-    private PilotDto pilot;
+    private Integer planeId;
+    private Integer pilotId;
     private Date date;
     private Time time;
     private String number;
@@ -18,15 +18,14 @@ public class FlightDto {
     public FlightDto() {
     }
 
-    public FlightDto(Integer id, PlaneDto plane, PilotDto pilot, Date date, Time time, String number) {
+    public FlightDto(Integer id, Integer planeId, Integer pilotId, Date date, Time time, String number) {
         this.id = id;
-        this.plane = plane;
-        this.pilot = pilot;
+        this.planeId = planeId;
+        this.pilotId = pilotId;
         this.date = date;
         this.time = time;
         this.number = number;
     }
-
 
     public Integer getId() {
         return id;
@@ -36,20 +35,20 @@ public class FlightDto {
         this.id = id;
     }
 
-    public PlaneDto getPlane() {
-        return plane;
+    public Integer getPlaneId() {
+        return planeId;
     }
 
-    public void setPlane(PlaneDto plane) {
-        this.plane = plane;
+    public void setPlaneId(Integer planeId) {
+        this.planeId = planeId;
     }
 
-    public PilotDto getPilot() {
-        return pilot;
+    public Integer getPilotId() {
+        return pilotId;
     }
 
-    public void setPilot(PilotDto pilot) {
-        this.pilot = pilot;
+    public void setPilotId(Integer pilotId) {
+        this.pilotId = pilotId;
     }
 
     public Date getDate() {
@@ -75,7 +74,5 @@ public class FlightDto {
     public void setNumber(String number) {
         this.number = number;
     }
-
-
 }
 

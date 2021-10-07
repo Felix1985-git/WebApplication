@@ -34,7 +34,7 @@ public class FlightServiceJPAImpl implements FlightServiceJPA{
     @Transactional
     public FlightDto getFlightByIdJPA(int id) {
         Flight flight = flightDaoJPA.findById(id).get();
-        return new FlightDto(flight.getId(), flight.getPlane(), flight.getPilot(), flight.getDate(), flight.getTime(), flight.getNumber());
+        return new FlightDto(flight.getId(), flight.getPlane().getId(), flight.getPilot().getId(), flight.getDate(), flight.getTime(), flight.getNumber());
     }
 
 }

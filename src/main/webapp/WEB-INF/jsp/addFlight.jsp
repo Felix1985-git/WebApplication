@@ -19,11 +19,11 @@
         <table border="0" cellpadding="5">
             <tr>
                 <td>planesId</td>
-                <td><form:input path="planesId"/></td>
+                <td><form:input path="planeId"/></td>
             </tr>
             <tr>
                 <td>pilotsId</td>
-                <td><form:input path="pilotsId"/></td>
+                <td><form:input path="pilotId"/></td>
             </tr>
             <tr>
                 <td>date(YYYY-MM-DD)</td>
