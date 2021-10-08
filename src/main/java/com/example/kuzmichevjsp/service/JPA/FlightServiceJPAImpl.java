@@ -1,29 +1,29 @@
 package com.example.kuzmichevjsp.service.JPA;
 
 import com.example.kuzmichevjsp.dao.JPA.FlightDaoJPA;
+import com.example.kuzmichevjsp.dao.JPA.PilotDaoJPA;
+import com.example.kuzmichevjsp.dao.JPA.PlaneDaoJPA;
 import com.example.kuzmichevjsp.dto.FlightDto;
-import com.example.kuzmichevjsp.dto.PlaneDto;
 import com.example.kuzmichevjsp.entity.Flight;
 
 import com.example.kuzmichevjsp.entity.Pilot;
 import com.example.kuzmichevjsp.entity.Plane;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import javax.persistence.*;
-import java.sql.Date;
-import java.sql.Time;
 
 @Service
 public class FlightServiceJPAImpl implements FlightServiceJPA{
 
     private FlightDaoJPA flightDaoJPA;
+    private PilotDaoJPA pilotDaoJPA;
+    private PlaneDaoJPA planeDaoJPA;
 
     @Autowired
-    public FlightServiceJPAImpl(FlightDaoJPA flightDaoJPA) {
+    public FlightServiceJPAImpl(FlightDaoJPA flightDaoJPA, PilotDaoJPA pilotDaoJPA, PlaneDaoJPA planeDaoJPA) {
         this.flightDaoJPA = flightDaoJPA;
+        this.pilotDaoJPA = pilotDaoJPA;
+        this.planeDaoJPA = planeDaoJPA;
     }
 
     @Override
@@ -35,7 +35,10 @@ public class FlightServiceJPAImpl implements FlightServiceJPA{
     @Override
     @Transactional
     public void updateFlightByIdJPA(FlightDto flight) {
-        flightDaoJPA.save(new Flight(flight.getId(), flightDaoJPA.findById(flight.getId()).get().getPlane(), flightDaoJPA.findById(flight.getId()).get().getPilot(), flight.getDate(), flight.getTime(), flight.getNumber()));
+        Pilot pilot = pilotDaoJPA.findById(flight.getPilotsId()).get();
+        Plane plane = planeDaoJPA.findById(flight.getPlanesId()).get();
+        planeDaoJPA.findById(flight.getPlanesId());
+        flightDaoJPA.save(new Flight(flight.getId(), plane, pilot, flight.getDate(), flight.getTime(), flight.getNumber()));
     }
 
     @Override

@@ -3,18 +3,19 @@ package com.example.kuzmichevjsp.entity;
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Time;
+import java.util.Optional;
 
 @Entity
 @Table(name = "flights")
 public class Flight {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @ManyToOne (fetch = FetchType.LAZY)
-    @JoinColumn (name = "planes_Id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "planes_Id")
     private Plane plane;
-    @ManyToOne (fetch = FetchType.LAZY)
-    @JoinColumn (name = "pilots_Id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "pilots_Id")
     private Pilot pilot;
     @Column(nullable = false)
     private Date date;
@@ -22,11 +23,6 @@ public class Flight {
     private Time time;
     @Column(unique = true)
     private String number;
-
-
-
-//    FOREIGN KEY (planes_id) REFERENCES planes(id)
-//    FOREIGN KEY (pilots_id) REFERENCES pilots(id)
 
     public Flight() {
     }

@@ -9,13 +9,13 @@ public class Plane {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
-    @Column (nullable = false)
+    @Column(nullable = false)
     String brand;
-    @Column (nullable = false)
+    @Column(nullable = false)
     String model;
-    @Column (nullable = false)
+    @Column(nullable = false)
     Integer capacity;
-    @Column (name = "tale_number", nullable = false,unique = true)
+    @Column(name = "tale_number", nullable = false, unique = true)
     String taleNumber;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "plane")
     private List<Flight> flights;
@@ -70,6 +70,14 @@ public class Plane {
 
     public void setTaleNumber(String taleNumber) {
         this.taleNumber = taleNumber;
+    }
+
+    public List<Flight> getFlights() {
+        return flights;
+    }
+
+    public void setFlights(List<Flight> flights) {
+        this.flights = flights;
     }
 }
 
