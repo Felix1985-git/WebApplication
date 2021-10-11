@@ -17,7 +17,7 @@
         <table border="0" cellpadding="5">
             <tr>
                 <td>Id</td>
-                <td><form:input path="Id"/></td>
+                <td><form:input path="Id" readonly="true"/> </td>
             </tr>
             <tr>
                 <td>planesId</td>
