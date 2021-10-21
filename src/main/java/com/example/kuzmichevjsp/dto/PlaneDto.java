@@ -1,11 +1,14 @@
 package com.example.kuzmichevjsp.dto;
 
+import java.util.List;
+
 public class PlaneDto {
     private int id;
     private String brand;
     private String model;
     private Integer capacity;
     private String taleNumber;
+    private List<FlightDto> flights;
 
     public PlaneDto() {
     }
@@ -63,6 +66,14 @@ public class PlaneDto {
 
     public void setTaleNumber(String taleNumber) {
         this.taleNumber = taleNumber;
+    }
+
+    public List<FlightDto> getFlights() {
+        return flights;
+    }
+
+    public void setFlights(List<FlightDto> flights) {
+        this.flights = flights;
     }
 
     @Override

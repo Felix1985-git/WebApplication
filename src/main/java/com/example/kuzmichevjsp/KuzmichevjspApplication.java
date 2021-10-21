@@ -47,6 +47,7 @@ public class KuzmichevjspApplication {
         } catch (EmptyDataFileException e) {
             System.err.println(e.getMessage());
         }
+
     }
 
 }

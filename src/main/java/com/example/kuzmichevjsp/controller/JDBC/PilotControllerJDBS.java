@@ -44,4 +44,10 @@ public class PilotControllerJDBS {
         return "redirect:/pilotsList";
     }
 
+    @GetMapping("/getAllFlightsByPilotId")
+    public String getAllFlightsByPilotId (@RequestParam("id") int id, Model model){
+        model.addAttribute("allFlights",pilotService.getAllFlightsByPilotId(id));
+        return "allFlightsPilot";
+    }
+
 }

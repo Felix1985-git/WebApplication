@@ -1,11 +1,14 @@
 package com.example.kuzmichevjsp.dto;
 
+import java.util.List;
+
 public class PilotDto {
     private int id;
     private String firstName;
     private String lastName;
     private RangDto rang;
     private String code;
+    private List<FlightDto> flights;
 
     public PilotDto() {
     }
@@ -18,12 +21,6 @@ public class PilotDto {
         this.code = code;
     }
 
-    public PilotDto(String firstName, String lastName, RangDto rang, String code) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.rang = rang;
-        this.code = code;
-    }
 
     public int getId() {
         return id;
@@ -65,14 +62,23 @@ public class PilotDto {
         this.code = code;
     }
 
+    public List<FlightDto> getFlights() {
+        return flights;
+    }
+
+    public void setFlights(List<FlightDto> flights) {
+        this.flights = flights;
+    }
+
     @Override
     public String toString() {
-        return "Pilots{" +
+        return "PilotDto{" +
                 "id=" + id +
-                ", first_name='" + firstName + '\'' +
-                ", last_name='" + lastName + '\'' +
-                ", rang='" + rang + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", rang=" + rang +
                 ", code='" + code + '\'' +
+                ", flights=" + flights +
                 '}';
     }
 }

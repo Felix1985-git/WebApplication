@@ -19,6 +19,7 @@
             <th>code</th>
             <th>delete</th>
             <th>update</th>
+            <th>show all flights</th>
         </tr>
         <c:forEach items="${pilot}" var="pilot">
             <tr>
@@ -34,6 +35,11 @@
                 </td>
                 <td align="center">
                     <form method="get" action="updatePilot">
+                        <input type="submit" value="${pilot.id}" name="id"/>
+                    </form>
+                </td>
+                <td align="center">
+                    <form method="get" action="getAllFlightsByPilotId">
                         <input type="submit" value="${pilot.id}" name="id"/>
                     </form>
                 </td>

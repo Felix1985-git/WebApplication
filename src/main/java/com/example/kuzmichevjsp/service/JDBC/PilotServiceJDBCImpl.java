@@ -35,4 +35,10 @@ public class PilotServiceJDBCImpl implements PilotServiceJDBC {
     public void insertPilotJDBC(PilotDto pilot) {
         pilotDao.insertPilotJDBC(pilot);
     }
+
+    @Override
+    @Transactional
+    public PilotDto getAllFlightsByPilotId(int id) {
+        return pilotDao.getAllFlightsByPilotId(id);
+    }
 }
