@@ -44,4 +44,11 @@ public class PlaneControllerJDBS {
         planeService.insertPlaneJDBC(plane);
         return "redirect:/planesList";
     }
+
+    @GetMapping("/getAllFlightsByPlaneId")
+    public String getAllFlightsByPilotId (@RequestParam("id") int id, Model model){
+        model.addAttribute("allFlights",planeService.getAllFlightsByPlaneId(id));
+        return "allFlightsPlane";
+    }
+
 }

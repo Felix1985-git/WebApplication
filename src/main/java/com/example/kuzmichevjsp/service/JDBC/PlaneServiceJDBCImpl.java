@@ -36,4 +36,11 @@ public class PlaneServiceJDBCImpl implements PlaneServiceJDBC {
     public void insertPlaneJDBC(PlaneDto plane) {
         planeDao.insertPlaneJDBC(plane);
     }
+
+    @Override
+    public PlaneDto getAllFlightsByPlaneId(int id) {
+        return planeDao.getAllFlightsByPlaneId(id);
+    }
+
+
 }

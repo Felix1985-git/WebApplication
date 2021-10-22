@@ -8,4 +8,5 @@ public interface PlaneDaoJDBC {
     PlaneDto getPlaneByIdJDBC (int id);
     List<PlaneDto> getAllPlaneJDBC();
     void insertPlaneJDBC (PlaneDto plane);
+    PlaneDto getAllFlightsByPlaneId (int id);
 }
